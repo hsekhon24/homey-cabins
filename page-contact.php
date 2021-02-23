@@ -30,9 +30,30 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
+		<section class="contact-info">
+		<?php
+				if (function_exists ('get_field')){
+					if(get_field('address')){
+						
+						echo '<h2> Contact Us </h2>';
+						the_field('address');
+					
+					}//end if
+				}//
+		?>
+		<p><?php		
+				if (function_exists ('get_field')){
+					if(get_field('phone')){
+						
+						the_field('phone');
+					
+					}//end if
+				}//
+		?></p>
+		</section>
+		<?php echo do_shortcode ('[wpforms id="221"]') ?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
