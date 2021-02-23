@@ -26,13 +26,48 @@ get_header();
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
+
 			endif;
 
 		endwhile; // End of the loop.
 		?>
 
+		<section class="cabins-overview">
+		<?php
+				if (function_exists ('get_field')){
+					if(get_field('cabins_overview')){
+						
+						echo '<h2> Overview </h2>';
+						the_field('cabins_overview');
+					
+					}//end if
+				}//
+		?>
+		</section>
+
+		<section class="places-nearby-gallery">
+		<h2>Places nearby</h2>
+		<?php 
+		
+				$images = get_field('places_nearby_images');
+
+				if( $images ): ?>
+					
+						<?php foreach( $images as $image ): ?>
+						
+								<a href="<?php echo $image['url']; ?>">
+									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+								</a>
+								<p><?php echo $image['caption']; ?></p>
+						
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+		</section>
+
+
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();
