@@ -223,5 +223,22 @@ if ( ! function_exists( 'homey_cabins_woocommerce_header_cart' ) ) {
 			</li>
 		</ul>
 		<?php
+		
 	}
 }
+
+function homey_cabins_product_short_description() {
+      
+    the_excerpt();
+      
+}
+add_action( 'woocommerce_after_shop_loop_item', 'homey_cabins_product_short_description', 7 );
+
+function homey_cabins_display_surrounding_activities() {
+
+		echo '<h2> Surrounding Activities </h2>';
+		//Uses the template part to display surrounding activities
+	 get_template_part('template-parts/surrounding', 'activities');
+	 
+}
+add_action( 'woocommerce_after_main_content', 'homey_cabins_display_surrounding_activities', 11 );

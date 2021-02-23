@@ -1,10 +1,10 @@
 <?php
 /**
- * Template part for displaying work categories
+ * Template part for displaying related testimnoials
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package TWD_Starter_Theme
+ * @package Homey_Cabins
  */
 
 ?>
@@ -12,7 +12,7 @@
 <?php
             // echo '<h1>Test</h1>';
             //            
-              
+            // $related = get_field('hc-testimonials');
             //             $args = array(
   			// 			'post_type'      => 'hc-testimonials',
 			// 			'posts_per_page' => 1,
