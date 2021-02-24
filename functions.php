@@ -136,6 +136,13 @@ function homey_cabins_widgets_init() {
 }
 add_action( 'widgets_init', 'homey_cabins_widgets_init' );
 
+function my_acf_init() {
+	
+	acf_update_setting('google_api_key', 'AIzaSyDPtiGPuG3DNrtbPcLo-jSt4DiAFBdF7kI');
+}
+
+add_action('acf/init', 'my_acf_init');
+
 /**
  * Enqueue scripts and styles.
  */
@@ -191,3 +198,4 @@ if ( class_exists( 'WooCommerce' ) ) {
 require get_template_directory() . '/inc/cpt.php';
 
 /**
+
