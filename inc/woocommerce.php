@@ -236,8 +236,7 @@ add_action( 'woocommerce_after_shop_loop_item', 'homey_cabins_product_short_desc
 
 function homey_cabins_display_surrounding_activities() {
 
-		echo '<h2> Surrounding Activities </h2>';
-		//Uses the template part to display surrounding activities
+	//Uses the template part to display surrounding activities
 	 get_template_part('template-parts/surrounding', 'activities');
 	 
 }

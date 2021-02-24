@@ -65,7 +65,6 @@ get_header();
 				<?php endif; ?>
 		</section>
 
-
 	</main><!-- #main -->
 
 <?php

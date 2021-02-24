@@ -30,14 +30,16 @@ get_header();
 
 		?>
 
+		<section class="about-owners">
 		<?php
 
 				if (function_exists ('get_field')){
 					if(get_field('about_owners')){
 						
 						echo '<h2> A little about Owners </h2>';
+						echo '<p>';
 						the_field('about_owners');
-					
+						echo '</p>';
 					}//end if
 				}
 
@@ -45,6 +47,10 @@ get_header();
 					if( !empty( $image ) ): ?>
 						<img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 					<?php endif; ?>
+
+		</section>
+
+		<section class="history-cabins">
 		<?php
 					if (function_exists ('get_field')){
 					if(get_field('history')){
@@ -55,16 +61,19 @@ get_header();
 					}//end if
 				}
 			?>
+		</section>
 
+		<section class="surrounding-activities">
 		<?php
-					echo '<h2> Surrounding Activities </h2>';
 					//Uses the template part to display surrounding activities
 					get_template_part('template-parts/surrounding', 'activities');
 
 		?>
+		</section>
 
+		<section class="surrounding-areas">
 		<?php
-							echo '<h2> Surrounding Areas </h2>';
+				echo '<h2> Surrounding Areas </h2>';
 				// ACF REPEATER - BASIC LOOP
 
 				// check if the repeater field has rows of data
@@ -94,7 +103,7 @@ get_header();
 				endif;
 
 		?>
-
+		</section>
 		<?php
 
 		endwhile; // End of the loop.

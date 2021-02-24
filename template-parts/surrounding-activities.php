@@ -13,11 +13,15 @@
 			
 		// ACF REPEATER - BASIC LOOP
 
+		 if(get_field('surrounding_activities', 24)): // 24 is page_id of about page where we have this acf field
+
 		// check if the repeater field has rows of data
-		if( have_rows('surrounding_activities') ):
+
+		if( have_rows('surrounding_activities', 24) ):
+			echo '<h2> Surrounding Activities </h2>';
 		
 			// loop through the rows of data
-			while ( have_rows('surrounding_activities') ) : the_row();
+			while ( have_rows('surrounding_activities', 24) ) : the_row();
 
 					echo '<h3>';
 					echo the_sub_field('activity_title');
@@ -44,5 +48,6 @@
 			// no rows found
 
 		endif;
+	endif;
 
 ?>

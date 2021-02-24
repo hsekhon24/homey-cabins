@@ -36,10 +36,12 @@
 
 			:hover > a,
 			.focus > a {
+				color: blue;
 			}
 
 			a:hover,
 			a.focus {
+				color: blue;
 			}
 		}
 
@@ -54,18 +56,21 @@
 
 		&:hover > a,
 		&.focus > a {
+			color: blue;
 		}
 	}
 
 	a {
 		display: block;
 		text-decoration: none;
+		margin: 20px;
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		text-decoration: none;
 	}
 }
 
