@@ -236,8 +236,46 @@ add_action( 'woocommerce_after_shop_loop_item', 'homey_cabins_product_short_desc
 
 function homey_cabins_display_surrounding_activities() {
 
+	if ( is_shop() )
+	{
 	//Uses the template part to display surrounding activities
 	 get_template_part('template-parts/surrounding', 'activities');
+	}
 	 
 }
 add_action( 'woocommerce_after_main_content', 'homey_cabins_display_surrounding_activities', 11 );
+
+
+/**
+ * Exclude Gift Certificates from shop(cabins) page
+ */
+function homey_cabins_custom_pre_get_posts_query( $q ) {
+
+    $tax_query = (array) $q->get( 'tax_query' );
+
+    $tax_query[] = array(
+           'taxonomy' => 'product_cat',
+           'field' => 'slug',
+           'terms' => array( 'gift-certificate' ), // Don't display products in the gift-certificate category on the shop page.
+           'operator' => 'NOT IN'
+    );
+
+
+    $q->set( 'tax_query', $tax_query );
+
+}
+add_action( 'woocommerce_product_query', 'homey_cabins_custom_pre_get_posts_query' ); 
+
+//Don't display price on all cabins page
+
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+
+
+// To change 'Read More' text to 'More info' on shop page
+add_filter( 'woocommerce_product_add_to_cart_text', function( $text ) {
+    if ( 'Read more' == $text ) {
+        $text = __( 'More Info', 'woocommerce' );
+    }
+
+    return $text;
+} );
