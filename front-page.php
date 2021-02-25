@@ -15,6 +15,7 @@
 get_header();
 ?>
 
+
 	<main id="primary" class="site-main">
 
 		<?php
@@ -52,21 +53,24 @@ get_header();
 				$images = get_field('places_nearby_images');
 
 				if( $images ): ?>
-					
+					<div id="lightgallery">
 						<?php foreach( $images as $image ): ?>
 						
 								<a href="<?php echo $image['url']; ?>">
 									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
 								</a>
-								<p><?php echo $image['caption']; ?></p>
+							
 						
 						<?php endforeach; ?>
-					</ul>
+				
+				</div>
 				<?php endif; ?>
 		</section>
 
 	</main><!-- #main -->
+	
 
+    
 <?php
 
 get_footer();

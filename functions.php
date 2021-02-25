@@ -156,6 +156,20 @@ function homey_cabins_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	//Load Lightbox gallery only on home page
+	if ( is_front_page( ) ) {
+
+		// JS files
+		wp_enqueue_script( 'hc-lightgallery', get_template_directory_uri().'/js/lightgallery.min.js', array('jquery'), '20210225', true ); // 20210225 defines version, its set to the date when we last used it
+
+		wp_enqueue_script( 'hc-lightgallery-settings', get_template_directory_uri().'/js/lightbox-settings.js', array('jquery', 'hc-lightgallery'), '20210225', true );
+
+		// CSS files
+	
+		wp_enqueue_style( 'hc-gallery', get_template_directory_uri() . '/css/lightgallery.css' );
+
+	}
 }
 add_action( 'wp_enqueue_scripts', 'homey_cabins_scripts' );
 
