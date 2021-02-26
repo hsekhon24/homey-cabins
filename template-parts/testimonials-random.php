@@ -12,7 +12,7 @@
 <?php
             // echo '<h1>Test</h1>';
             //            
-            // $related = get_field('hc-testimonials');
+            // $related = get_field('related_testimonial');
             //             $args = array(
   			// 			'post_type'      => 'hc-testimonials',
 			// 			'posts_per_page' => 1,
@@ -33,12 +33,12 @@
             //             wp_reset_postdata();
             //             echo '</section>';
 			//         }
-
+          
             $args = array(
                 'post_type'      => 'hc-testimonials',
                 'posts_per_page' => 1,
                 'orderby'        => 'rand',
-  
+
             );
 
             $query = new WP_Query( $args );
