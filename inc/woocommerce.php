@@ -297,3 +297,6 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 
 // Re-add product thumbnail gallery at bottom on Single Products page
 add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 15 );
+
+/* Remove Categories from Single Products */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );

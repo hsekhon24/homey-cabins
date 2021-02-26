@@ -18,17 +18,15 @@
 				wp_nav_menu( array( 'theme_location' => 'footer' ) );
 				?>
 			</nav> 
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'homey-cabins' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'homey-cabins' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'homey-cabins' ), 'homey-cabins', '<a href="https://bcitwebdeveloper.ca">TWD Students</a>' );
-				?>
+			<p> 
+          		<b>Designed and developed by </b> <br></br>
+				<a href="http://rkaur.bcitwebdeveloper.ca/" target="_blank">Rajdeep Brar</a>
+				&nbsp; | &nbsp; 
+				<a href="http://eloginova.bcitwebdeveloper.ca/" target="_blank">Katerina Loginova</a>
+                &nbsp; | &nbsp; 
+				<a href="http://hsekhon.bcitwebdeveloper.ca/" target="_blank">Harman Sekhon</a><br></br>
+					For Educational purposes only
+			</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

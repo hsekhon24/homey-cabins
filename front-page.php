@@ -17,23 +17,27 @@ get_header();
 
 
 	<main id="primary" class="site-main">
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header><!-- .entry-header -->
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+		<?php homey_cabins_post_thumbnail(); ?>
 
-			get_template_part( 'template-parts/content', 'page' );
+		<div class="entry-content">
+			<?php
+			the_content();
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'homey-cabins' ),
+					'after'  => '</div>',
+				)
+			);
+			?>
+	
 
-			endif;
 
-		endwhile; // End of the loop.
-		?>
-
-		<section class="cabins-overview">
+<section class="cabins-overview">
 		<?php
 				if (function_exists ('get_field')){
 					if(get_field('cabins_overview')){
@@ -49,28 +53,30 @@ get_header();
 		<section class="places-nearby-gallery">
 		<h2>Places nearby</h2>
 		<?php 
-		
-				$images = get_field('places_nearby_images');
+			if (function_exists ('get_field')):
+				$images = get_field('places_nearby_images'); ?>
 
-				if( $images ): ?>
+				<?php if( $images ): ?>
 					<div id="lightgallery">
 						<?php foreach( $images as $image ): ?>
 						
-								<a href="<?php echo $image['url']; ?>">
-									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
-								</a>
-							
+							<a href="<?php echo $image['url']; ?>">
+								<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+							</a>		
 						
 						<?php endforeach; ?>
 				
 				</div>
 				<?php endif; ?>
+			
+			<?php endif; ?>
 		</section>
-
+		</div><!-- .entry-content -->
 	</main><!-- #main -->
 	
-
-    
+  
 <?php
 
 get_footer();
+
+

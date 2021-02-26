@@ -10,51 +10,22 @@
 ?>
 
 <?php
-            // echo '<h1>Test</h1>';
-            //            
-            // $related = get_field('related_testimonial');
-            //             $args = array(
-  			// 			'post_type'      => 'hc-testimonials',
-			// 			'posts_per_page' => 1,
-			// 			'orderby'        => 'rand',
-            //             'post__in' => $related
-			// 		);
+if (function_exists ('get_field')):
+    $featured_posts = get_field('related_testimonial');
+    $random_testimonial = shuffle($featured_posts);
+    if( $featured_posts ): ?>
+  <?php echo '<h3>Related Testimonial</h3>'; ?>
+    <?php foreach( $featured_posts as $post ): 
 
-			// 		$query = new WP_Query( $posts );
+        // Setup this post for WP functions (variable must be named $post).
+        setup_postdata($post); ?>
 
-            //         if ( $query -> have_posts() )
-            //         {
-            //             echo '<section>';
-            //             while($query -> have_posts())
-            //             {
-            //                 $query -> the_post();
-            //                 the_field('related_testimonial');
-            //             }
-            //             wp_reset_postdata();
-            //             echo '</section>';
-			//         }
-          
-            $args = array(
-                'post_type'      => 'hc-testimonials',
-                'posts_per_page' => 1,
-                'orderby'        => 'rand',
-
-            );
-
-            $query = new WP_Query( $args );
-
-            if ( $query -> have_posts() )
-            {
-
-                echo '<section><h3>Random Testimonial</h3>';
-                while($query -> have_posts())
-                {
-                    $query -> the_post();
-                    the_content();
-                }
-                wp_reset_postdata();
-                echo '</section>';
-            }
-?>
-
-
+            <?php the_content(); ?>
+                <?php break; ?>
+           <?php endforeach; ?>
+   
+    <?php 
+    // Reset the global post object so that the rest of the page works correctly.
+    wp_reset_postdata(); ?>
+<?php endif; ?>
+<?php endif; ?>

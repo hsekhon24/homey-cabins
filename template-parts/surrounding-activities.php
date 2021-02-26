@@ -13,6 +13,7 @@
 			
 		// ACF REPEATER - BASIC LOOP
 
+	if (function_exists ('get_field')):
 		 if(get_field('surrounding_activities', 24)): // 24 is page_id of about page where we have this acf field
 
 		// check if the repeater field has rows of data
@@ -49,5 +50,5 @@
 
 		endif;
 	endif;
-
+endif;
 ?>
