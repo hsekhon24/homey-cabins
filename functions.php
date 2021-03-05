@@ -123,13 +123,11 @@ add_action( 'after_setup_theme', 'homey_cabins_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 
-function my_acf_init() {
-	
-	acf_update_setting('google_api_key', 'AIzaSyDPtiGPuG3DNrtbPcLo-jSt4DiAFBdF7kI');
+function my_acf_google_map_api( $api ){
+    $api['key'] = 'AIzaSyCIKMOtFacMI_MLIJz8eIZ9LklBA_B846E';
+    return $api;
 }
-
-add_action('acf/init', 'my_acf_init');
-
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 /**
  * Enqueue scripts and styles.
  */
@@ -162,6 +160,8 @@ function homey_cabins_scripts() {
 		wp_enqueue_style( 'hc-gallery-transitions', get_template_directory_uri() . '/css/lightgallery.css' );
 
 	}
+	wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCIKMOtFacMI_MLIJz8eIZ9LklBA_B846E' );
+	wp_enqueue_script( 'google-map-init', get_template_directory_uri().'/js/google-map.js', array('jquery', 'google-map'), '20210305', true );
 }
 add_action( 'wp_enqueue_scripts', 'homey_cabins_scripts' );
 
