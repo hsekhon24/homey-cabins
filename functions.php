@@ -151,9 +151,15 @@ function homey_cabins_scripts() {
 
 		wp_enqueue_script( 'hc-lightgallery-settings', get_template_directory_uri().'/js/lightbox-settings.js', array('jquery', 'hc-lightgallery'), '20210225', true );
 
+		//for animated gallery
+		wp_enqueue_script( 'hc-lightgallery-thumbnail', get_template_directory_uri().'/js/lg-fullscreen.min.js', array('jquery'), '20210225', true );
+
+		wp_enqueue_script( 'hc-lightgallery-full-screen', get_template_directory_uri().'/js/lg-thumbnail.min.js', array('jquery'), '20210225', true );
+
 		// CSS files
-	
 		wp_enqueue_style( 'hc-gallery', get_template_directory_uri() . '/css/lightgallery.css' );
+
+		wp_enqueue_style( 'hc-gallery-transitions', get_template_directory_uri() . '/css/lightgallery.css' );
 
 	}
 }

@@ -14,7 +14,7 @@ if (function_exists ('get_field')):
     $featured_posts = get_field('related_testimonial');
     $random_testimonial = shuffle($featured_posts);
     if( $featured_posts ): ?>
-  <?php echo '<h3>Related Testimonial</h3>'; ?>
+
     <?php foreach( $featured_posts as $post ): 
 
         // Setup this post for WP functions (variable must be named $post).

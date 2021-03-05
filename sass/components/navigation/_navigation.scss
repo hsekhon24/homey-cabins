@@ -1,11 +1,15 @@
 .main-navigation {
 	display: block;
 	width: 100%;
+	position: relative;
+	top: 20%;
+	z-index: 9999;
+
 
 	ul {
 		display: none;
 		list-style: none;
-		margin: 0;
+		margin: 0 ;
 		padding-left: 0;
 
 		ul {
@@ -19,46 +23,21 @@
 			ul {
 				left: -999em;
 				top: 0;
+				
 			}
-
-			li {
-
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
-				}
-			}
+	
 
 			a {
 				width: 200px;
 			}
-
-			:hover > a,
-			.focus > a {
-				color: blue;
-			}
-
-			a:hover,
-			a.focus {
-				color: blue;
-			}
+			
 		}
 
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
 	}
+	
 
-	li {
-		position: relative;
 
-		&:hover > a,
-		&.focus > a {
-			color: blue;
-		}
-	}
+	
 
 	a {
 		display: block;
@@ -66,13 +45,10 @@
 		margin: 20px;
 	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-		text-decoration: none;
-	}
+	
 }
+
+
 
 /* Small menu. */
 .menu-toggle,
@@ -88,6 +64,7 @@
 
 	.main-navigation ul {
 		display: flex;
+		justify-content: center;
 	}
 }
 

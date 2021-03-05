@@ -19,12 +19,12 @@
 				?>
 			</nav> 
 			<p> 
-          		<b>Designed and developed by </b> <br></br>
+          		<b>Designed and developed by </b> <br>
 				<a href="http://rkaur.bcitwebdeveloper.ca/" target="_blank">Rajdeep Brar</a>
 				&nbsp; | &nbsp; 
 				<a href="http://eloginova.bcitwebdeveloper.ca/" target="_blank">Katerina Loginova</a>
                 &nbsp; | &nbsp; 
-				<a href="http://hsekhon.bcitwebdeveloper.ca/" target="_blank">Harman Sekhon</a><br></br>
+				<a href="http://hsekhon.bcitwebdeveloper.ca/" target="_blank">Harman Sekhon</a><br>
 					For Educational purposes only
 			</p>
 		</div><!-- .site-info -->

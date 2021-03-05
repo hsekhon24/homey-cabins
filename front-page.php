@@ -18,7 +18,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 		<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php the_title( '<h1 class="entry-title screen-reader-text">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
 
 		<?php homey_cabins_post_thumbnail(); ?>
@@ -39,15 +39,15 @@ get_header();
 
 <section class="cabins-overview">
 		<?php
-				if (function_exists ('get_field')){
-					if(get_field('cabins_overview')){
+				if (function_exists ('get_field')):
+					if(get_field('cabins_overview')): ?>
 						
-						echo '<h2> Overview </h2>';
-						the_field('cabins_overview');
+						<h2> Overview </h2>
+					<?php the_field('cabins_overview'); ?>
 					
-					}//end if
-				}//
-		?>
+					<?php endif; ?>	
+				<?php endif; ?>
+	
 		</section>
 
 		<section class="places-nearby-gallery">

@@ -300,3 +300,31 @@ add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_s
 
 /* Remove Categories from Single Products */
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+
+/* Remove sidebar from shop page */
+
+function homey_cabins_remove_sidebar_shop_page() {
+
+    if ( is_shop() ) {
+
+    remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+   }
+
+}
+
+add_action( 'wp', 'homey_cabins_remove_sidebar_shop_page' );
+
+
+/* Add random testimonial on single product page */
+function homey_cabins_display_random_testimonial() {
+
+		if ( is_product() )
+		{
+			//Uses the template part to display random testimonial
+		get_template_part('template-parts/testimonials', 'random');
+		}
+		 
+	}
+add_action( 'woocommerce_after_single_product_summary', 'homey_cabins_display_random_testimonial', 25 );

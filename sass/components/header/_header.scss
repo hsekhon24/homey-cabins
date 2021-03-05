@@ -1,0 +1,47 @@
+.home figure {
+    margin-top: 0;
+}
+
+.site-branding {
+    text-align: center;
+    
+}
+.site-branding a {
+    margin: 0 auto;
+}
+
+.site-branding img {
+    height: 80px;
+    width: auto;
+    position: relative;
+    z-index: 9999;
+    top: 30px;
+}
+
+.site-header {
+   
+    height: 72px;
+    background-image: linear-gradient(#00303fe0,#00303fc4,#00303fa2);
+
+
+    width: 100%;
+ 
+
+    z-index: 999;
+}
+
+@media screen and (min-width: 37.5em){
+    
+.wp-block-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+   width: 100%;
+   height: 100vh;
+   object-fit: cover;
+   opacity: 0.75;
+
+
+}
+
+}
