@@ -11,43 +11,27 @@
 		list-style: none;
 		margin: 0 ;
 		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-				
-			}
-	
-
-			a {
-				width: 200px;
-			}
-			
-		}
-
 	}
-	
 
+	li {
+		position: relative;
 
-	
+		&:hover > a,
+		&.focus > a {
+		}
+	}
 
 	a {
 		display: block;
 		text-decoration: none;
-		margin: 20px;
 	}
 
-	
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
 }
-
 
 
 /* Small menu. */
@@ -62,9 +46,57 @@
 		display: none;
 	}
 
+	.main-navigation {
+		position: absolute;
+		top:40px;
+		z-index: 3;
+	
+
+	}
 	.main-navigation ul {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
+		float: right;
+	}
+
+	.main-navigation ul li {
+		padding: 0 20px;
+	}
+
+
+	.main-navigation ul ul {
+	//	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	background-color: black;
+		float: left;
+		position: absolute;
+		top: 100%;
+		left: -999em;
+		z-index: 99999;
+	
+		ul {
+			left: -999em;
+			top: 0;
+		}
+		li {
+			&:hover > ul,
+			&.focus > ul {
+				display: block;
+				left: auto;
+			}
+		}
+		a {
+			width: 70px;
+		}
+		:hover > a,
+		.focus > a {
+		}
+		a:hover,
+		a.focus {
+		}
+	}
+	li:hover > ul,
+	li.focus > ul {
+		left: auto;
 	}
 }
 

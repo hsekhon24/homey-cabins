@@ -34,20 +34,57 @@ get_header();
 				)
 			);
 			?>
-	
+	<div class="banner-video-container">
+			 <?php
+				$file = get_field('banner_video');
+				if( $file ): ?>
+				<video src="<?php echo $file['url']; ?>" autoplay="on">
+				
+				<?php endif; ?>
+						
+	</div>
+
+	<div class="content-on-video">
+	<?php
+				if (function_exists ('get_field')):
+					if(get_field('tagline')): ?>
+					<p class="tagline">	
+					<?php the_field('tagline'); ?>
+					<p>
+					<?php endif; ?>	
+				<?php endif; ?>
+
+		<?php		if (function_exists ('get_field')):
+					if(get_field('book_now_button')): ?>
+						
+				<a href="<?php echo get_field('book_now_button'); ?>">Book now </a>
+					
+					<?php endif; ?>	
+				<?php endif; ?>
+	</div>
 
 
 <section class="cabins-overview">
-		<?php
+	<div class="cabins-overview-content">
+				<?php	if (function_exists ('get_field')):
+					$image = get_field('overview_image');
+					if( !empty( $image ) ): ?>
+						<img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+					<?php endif; ?>
+				<?php endif; ?>
+	</div>
+	<div class="cabins-overview-content">
+				<?php
 				if (function_exists ('get_field')):
 					if(get_field('cabins_overview')): ?>
 						
 						<h2> Overview </h2>
-					<?php the_field('cabins_overview'); ?>
-					
+					<p>
+						<?php the_field('cabins_overview'); ?>
+					</p>
 					<?php endif; ?>	
 				<?php endif; ?>
-	
+	</div>
 		</section>
 
 		<section class="places-nearby-gallery">
