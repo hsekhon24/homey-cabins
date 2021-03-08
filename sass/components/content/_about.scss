@@ -1,0 +1,53 @@
+@media screen and (min-width: 37.5em){
+    .about-owners{
+        display: flex;
+        justify-content: space-between;
+        margin:150px;
+    }
+    .about-owners-content img{
+        width: 500px;
+        height: auto;
+        margin: 50px
+    }
+    .about-owners-content{
+        flex: 1;            
+    }
+    .about-owners-content p{
+    text-align: justify;
+  	text-justify: inter-word;
+    }
+    .page-id-24 .entry-content {
+        margin: 0;
+    }
+    .history-cabins h2{
+        text-align: center;
+    }
+    .history-cabins p{
+        text-align: justify;
+        text-justify: inter-word;
+        padding-left: 70px;
+        padding-right: 70px;    
+    }
+    .history-cabins img{
+        margin-left: 8%;
+        margin-bottom: 20px;    
+    }
+    .surrounding-activities h2{
+        text-align: center;
+        margin: 30px;
+    }
+    .surrounding-areas-content{
+        display: flex;
+        justify-content: space-evenly;   
+    }
+    .surrounding-areas-content img{
+        height: 250px;
+    }
+    .surrounding-areas h2{
+        text-align: center;  
+    }
+    .surrounding-areas-content a{
+        text-align: right;
+    }
+}
+
