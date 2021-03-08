@@ -50,15 +50,19 @@ get_header();
 					if(get_field('tagline')): ?>
 					<p class="tagline">	
 					<?php the_field('tagline'); ?>
-					<p>
+					</p>
 					<?php endif; ?>	
 				<?php endif; ?>
 
-		<?php		if (function_exists ('get_field')):
-					if(get_field('book_now_button')): ?>
-						
-				<a href="<?php echo get_field('book_now_button'); ?>">Book now </a>
-					
+		<?php		if (function_exists ('get_field')):  ?>
+								
+						<?php 
+							$link = get_field('book_now_button');
+							if( $link ): 
+								$link_url = $link['url'];
+						?>
+						<a href="<?php echo esc_url( $link_url ); ?>">Book now</a>
+				
 					<?php endif; ?>	
 				<?php endif; ?>
 	</div>
@@ -78,7 +82,7 @@ get_header();
 				if (function_exists ('get_field')):
 					if(get_field('cabins_overview')): ?>
 						
-						<h2> Overview </h2>
+						<h2> #1 Place to Visit </h2>
 					<p>
 						<?php the_field('cabins_overview'); ?>
 					</p>
@@ -88,7 +92,7 @@ get_header();
 		</section>
 
 		<section class="places-nearby-gallery">
-		<h2>Places nearby</h2>
+		<h2>Explore Places nearby</h2>
 		<?php 
 			if (function_exists ('get_field')):
 				$images = get_field('places_nearby_images'); ?>

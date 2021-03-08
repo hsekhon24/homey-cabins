@@ -19,7 +19,7 @@ get_header();
 	<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title screen-reader-text">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
-
+<div class="contact">
 	<section class="contact-info">
 
 		<?php
@@ -27,12 +27,23 @@ get_header();
 					if(get_field('address')): ?>
 				
 					<h2> Contact Us </h2>
+					<h3> We'd love to hear from you! </h3>
 					<p>
 						<?php the_field('address'); ?>
 					</p>
 					
 				<?php endif; ?>
 				<?php endif; ?>
+
+		<?php		
+		if (function_exists ('get_field')):
+			if(get_field('phone')): ?>
+				
+			<a href="tel:<?php get_field('phone'); ?>">Phone: 
+				<?php the_field('phone'); ?> 
+			</a>	
+			<?php endif; ?>
+		<?php endif; ?>
 
 		<?php
 				if (function_exists ('get_field')):
@@ -45,19 +56,10 @@ get_header();
 				<?php endif; ?>
 				<?php endif; ?>
 
-		<?php		
-				if (function_exists ('get_field')):
-					if(get_field('phone')): ?>
-						
-				<a href="tel:<?php get_field('phone'); ?>">	 
-					<?php the_field('phone'); ?> 
-				</a>	
-				<?php endif; ?>
-				<?php endif; ?>
-
+		
 		</section>
 		<?php echo do_shortcode ('[wpforms id="221"]') ?>
-
+</div>
 	</main><!-- #main -->
 
 <?php

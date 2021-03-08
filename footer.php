@@ -12,12 +12,21 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
+	<div class= "footer-menus">
+	
 		<nav id="footer-nav" class="footer-nav">
 				<?php
 				wp_nav_menu( array( 'theme_location' => 'footer' ) );
 				?>
-			</nav> 
+		</nav> 
+
+		<nav id="social-nav" class="social-nav">
+				<?php
+				wp_nav_menu( array( 'theme_location' => 'social' ) );
+				?>
+		</nav> 	
+	</div>
+		<div class="site-info">
 			<p> 
           		<b>Designed and developed by </b> <br>
 				<a href="http://rkaur.bcitwebdeveloper.ca/" target="_blank">Rajdeep Brar</a>

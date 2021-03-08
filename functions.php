@@ -51,6 +51,7 @@ if ( ! function_exists( 'homey_cabins_setup' ) ) :
 		register_nav_menus(
 			array(
 				'header' => esc_html__( 'Header Menu Location', 'homey-cabins' ),
+				'social' => esc_html__( 'Social Menu Location', 'homey-cabins' ),
 				'footer' => esc_html__( 'Footer Menu Location', 'homey-cabins' ),
 			)
 		);
@@ -132,6 +133,13 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
  * Enqueue scripts and styles.
  */
 function homey_cabins_scripts() {
+	wp_enqueue_style(
+		'hc-googlefonts', 
+		'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Open+Sans:wght@300;400;700&display=swap', 
+		array(),
+		null
+);
+
 	wp_enqueue_style( 'homey-cabins-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'homey-cabins-style', 'rtl', 'replace' );
 

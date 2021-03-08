@@ -1,3 +1,10 @@
 main {
     margin: 0;
 }
+
+.page:not(.page-id-22)  {    //not home page
+    main{
+    position: relative;
+    top: 100px;
+    }
+}
