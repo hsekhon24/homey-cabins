@@ -21,9 +21,17 @@ get_header();
 		</header><!-- .entry-header -->
 
 		<section class="about-owners">
-		<?php
+			<div class="about-owners-content">
+				<?php	if (function_exists ('get_field')):
+						$image = get_field('photo_owner');
+						if( !empty( $image ) ): ?>
+							<img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						<?php endif; ?>
+					<?php endif; ?>
+			</div>
 
-				if (function_exists ('get_field')):
+			<div class="about-owners-content">
+			<?php if (function_exists ('get_field')):
 					if(get_field('about_owners')): ?>
 						
 						<h2> A little about Owners </h2>
@@ -32,13 +40,7 @@ get_header();
 						</p>
 				<?php endif; ?>
 				<?php endif; ?>
-
-			<?php	if (function_exists ('get_field')):
-					$image = get_field('photo_owner');
-					if( !empty( $image ) ): ?>
-						<img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-					<?php endif; ?>
-				<?php endif; ?>
+			</div>
 		</section>
 
 		<section class="history-cabins">
@@ -46,7 +48,7 @@ get_header();
 					if (function_exists ('get_field')):
 						if(get_field('history')): ?>
 							
-							'<h2> History of Cabins </h2>';
+							<h2> History of Cabins </h2>
 							<?php the_field('history'); ?>
 				
 						<?php endif; ?>
@@ -62,10 +64,10 @@ get_header();
 		</section>
 
 		<section class="surrounding-areas">
-		
 			<h2> Surrounding Areas </h2>
-				
-				
+				<div class="surrounding-areas-content">
+			
+								
 <?php		// ACF REPEATER - BASIC LOOP
 
 			if (function_exists ('get_field')):
@@ -95,13 +97,17 @@ get_header();
 
 
 		?>
-	<?php 
-		$location = get_field('location_map');
+		</div>
+		</section>
+<section class="location-map">
+<?php 
+	$location = get_field('location_map');
 		if( $location ): ?>
 			<div class="acf-map" data-zoom="16">
 				<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
 			</div>
 		<?php endif; ?>
+		
 		</section>
 
 	</main><!-- #main -->
