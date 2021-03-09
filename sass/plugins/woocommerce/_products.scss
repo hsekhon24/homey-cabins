@@ -1,76 +1,91 @@
-ul.products {
-	margin: 0;
-	padding: 0;
+// ul.products {
+// 	margin: 0;
+// 	padding: 0;
 
-	li.product {
-		list-style: none;
-		position: relative;
-		margin-bottom: 2em;
+// 	li.product {
+// 		list-style: none;
+// 		position: relative;
+// 		margin-bottom: 2em;
 
-		img {
-			display: block;
-		}
+// 		img {
+// 			display: block;
+// 		}
 
-		.button {
-			display: block;
-		}
-	}
-}
-
-@media screen and (min-width: 48em) {
-
-	ul.products {
-
-		li.product {
-
-			@include column-width(3);
-			float: left;
-			margin-right: $columns__margin;
-
-			&.first {
-				clear: both;
-			}
-
-			&.last {
-				margin-right: 0;
-			}
-		}
-	}
-
-	ul.products.columns-1 {
-
-		li.product {
-			float: none;
-			width: 100%;
-		}
-
-	}
-
-	@for $i from 2 through 6 {
-
-		ul.products.columns-#{$i} {
-
-			li.product {
-
-				@include column-width( $i );
-			}
-
-		}
-	}
-}
-
-
-// .products .column-4 {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	width: 1000px;
-
-
+// 		.button {
+// 			display: block;
+// 		}
+// 	}
 // }
 
-// ul.products li.product {
+// @media screen and (min-width: 48em) {
 
-// 		display: flex;
-// 		flex-direction: row;
+// 	ul.products {
 
+// 		li.product {
+
+// 			@include column-width(3);
+// 			float: left;
+// 			margin-right: $columns__margin;
+
+// 			&.first {
+// 				clear: both;
+// 			}
+
+// 			&.last {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+
+// 	ul.products.columns-1 {
+
+// 		li.product {
+// 			float: none;
+// 			width: 100%;
+// 		}
+
+// 	}
+
+// 	@for $i from 2 through 6 {
+
+// 		ul.products.columns-#{$i} {
+
+// 			li.product {
+
+// 				@include column-width( $i );
+// 			}
+
+// 		}
+// 	}
 // }
+.post-type-archive-product {
+	main{
+	top: 100px;
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+	font-family: $font__content;
+}
+}
+.woocommerce-breadcrumb{
+	display: none;
+}
+.woocommerce-products-header__title {
+	display: none;
+}
+@media screen and (min-width: 1024px){
+ul.products {	
+	li.product:nth-child(odd) { 
+		display: flex;
+		flex-direction: row;
+	}
+	li.product:nth-child(even) { 
+	display: flex;
+	flex-direction: row-reverse;	
+	}
+	a {
+		text-decoration: none;
+	}
+
+}
+}
