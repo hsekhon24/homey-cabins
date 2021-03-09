@@ -6,6 +6,7 @@
     position: absolute;
     top: 5px;
     left: 40px;
+    z-index: 4;
 }
 
 .site-branding img {
@@ -25,7 +26,7 @@
   // background-color: rgb(102, 43, 25);
  
    background-color: #fff;
- //   background-color: rgba(27, 26, 26, 0.849);
+   
     opacity: 0.90;
     z-index: 3;
     width: 100%;
@@ -33,6 +34,7 @@
 
    // z-index: 999;
 }
+
 
 @media screen and (min-width: 37.5em){
     

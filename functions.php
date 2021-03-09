@@ -102,6 +102,7 @@ if ( ! function_exists( 'homey_cabins_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
 	}
 endif;
 add_action( 'after_setup_theme', 'homey_cabins_setup' );
@@ -215,4 +216,5 @@ if ( class_exists( 'WooCommerce' ) ) {
 require get_template_directory() . '/inc/cpt.php';
 
 /**
+
 
