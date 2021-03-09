@@ -8,7 +8,7 @@
  */
 
 ?>
-
+<section class="surrounding-activities">
 <?php
 			
 		// ACF REPEATER - BASIC LOOP
@@ -50,3 +50,4 @@
 		endif;
 
 ?>
+</section>

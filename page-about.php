@@ -55,6 +55,7 @@ get_header();
 					<?php endif; ?>
 		</section>
 
+		
 		<section class="surrounding-activities">
 			<?php
 						//Uses the template part to display surrounding activities
