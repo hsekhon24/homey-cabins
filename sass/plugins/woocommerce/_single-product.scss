@@ -4,9 +4,12 @@
 	main{
 		position: relative;
 		top: 100px;
-		max-width: 1200px;
+	//	max-width: 1200px;
+	background-color: rgb(201, 184, 184);
 		margin: 0 auto;
 		font-family: $font__content;
+		padding-top: 50px;
+		padding-bottom: 50px;
 		}
 		.site-footer {
 			position: relative;
@@ -105,19 +108,44 @@
 
 //----------------------------
 
+.product:not(.random-testimonial) {
+	max-width: 900px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 50px;
+}
 
+/* Title */
+.product_title .entry-title {
+	text-align: center;
+}
+
+/* Trigger/Search icon */
+.woocommerce-product-gallery__trigger {
+	display: none;
+}
 
 .cart {
 	text-align: center;
 }
 
+.wc-bookings-booking-form {
+	width: 70%;
+	margin: 0 auto;
+}
 
 
 .wc-bookings-booking-form-button {
 		color: white;
 		background-color: rgb(44, 51, 57);
 		border: white solid 2px;
-		width: 50%;
+		padding: 15px;
+		width:400px;
+		margin-top: 30px;
+}
+
+.wc-bookings-booking-form-button:hover {
+	background-color: rgb(83, 32, 32);
 }
 
 // a.button, 
@@ -128,21 +156,31 @@
 //   width: 200px;
 // }
 
-.hc-product-short-description {
-	line-height: 30px;
-	font-size: 16px;
+
+
+/* Product Gallery */
+.data-thumb {
+	width: 33.33%;
 }
 
+/* Testimonial */
+
+.random-testimonial {
+	margin-top: 80px;
+	
+}
+
+blockquote {
+	margin: 0;
+}
 
 .wp-block-quote.is-style-large {
 	background-color: rgb(53, 33, 33);
 	color: white;
-}
-
-blockquote {
-	margin: 3em 4em;
 	padding: 3em;
 }
+
+
 
 .wp-block-quote.is-style-large p{
 //	color: white;
@@ -151,10 +189,20 @@ blockquote {
 	text-align: center;
 }
 
+.wp-block-quote.is-style-large cite {
+	text-align: right;
+}
+
+.woocommerce-product-details__short-description p{
+	line-height: 2em;
+	font-size: 16px;
+	margin-bottom: 40px;
+}
 
 
-
-
+// .accommodation_booking_time_tab a{
+// 	visibility: hidden;
+// }
 
 
 

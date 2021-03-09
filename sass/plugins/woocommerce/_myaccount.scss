@@ -1,0 +1,36 @@
+
+#post-16{
+    width: fit-content;
+    margin: 20px auto;
+    border: 1px solid #000;
+    padding: 50px;
+
+    background-color: rgba(0,0,0,.6);
+    border-radius: 5px;
+
+    color: #fff;
+
+    .woocommerce-LostPassword a{
+        color: #fff;
+     }
+
+     .woocommerce-form{
+        .woocommerce-form-row{
+            label{
+                width: 100%;
+            }
+
+            input{
+                width: 100%;
+            }
+        }
+    }
+
+    h1, h2{
+        text-align: center;
+    }
+
+    .woocommerce-form__label-for-checkbox{
+        float: left;
+    }
+}

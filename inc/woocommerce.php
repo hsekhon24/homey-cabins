@@ -270,6 +270,18 @@ add_action( 'woocommerce_product_query', 'homey_cabins_custom_pre_get_posts_quer
 
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 
+// Remove result count from cabins page
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 ); 
+
+// Remove catalog ordering dropdown from cabins page
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 ); 
+
+//Remove cabin image from top
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 ); 
+
+//Add cabin image again after the title
+add_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_product_thumbnail', 15);
+
 
 // To change 'Read More' text to 'More info' on shop page
 add_filter( 'woocommerce_product_add_to_cart_text', function( $text ) {
@@ -292,15 +304,28 @@ remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumb
 add_action( 'woocommerce_after_single_product_summary', 'woocommerce_show_product_thumbnails', 25 );
 
 
-// Remove product thumbnail gallery from Single Products page
+// Remove product title from Single Products page
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 ); 
 
-// Re-add product thumbnail gallery at bottom on Single Products page
+// Re-add product title on top on Single Products page
 add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 15 );
 
 /* Remove Categories from Single Products */
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
+/* Remove Product image from Single Products */
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
+
+/*Add product image after description on single product page */
+add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_images', 25 );
+
+
+
+/*Add product price on single product page */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+
+/*Add product price after description on single product page */
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 28 );
 
 /* Remove sidebar from shop page */
 
@@ -330,3 +355,30 @@ function homey_cabins_display_random_testimonial() {
 add_action( 'woocommerce_after_single_product_summary', 'homey_cabins_display_random_testimonial', 25 );
 
 
+/* Remove tabs from single cabin page */
+// Remove
+function remove_product_tabs( $tabs ) {
+    unset( $tabs['description'] );
+    unset( $tabs['additional_information'] );
+	unset( $tabs['accommodation_booking_time'] );
+    return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'remove_product_tabs', 98, 1 );
+
+// Tabs callback function after single content.
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
+//add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_additional_information_tab' );
+//add_action('woocommerce_after_single_product_summary', 'add_time_tab_content');
+
+
+function hc_arrive_depart_time() {
+	$check_in  = WC_Product_Accommodation_Booking::get_check_times( 'in' );
+	$check_out = WC_Product_Accommodation_Booking::get_check_times( 'out' );
+	?>
+	<h2><?php echo esc_html( apply_filters( 'woocommerce_accommodation_booking_time_tab_heading', __( 'Arriving/leaving', 'woocommerce-accommodation-bookings' ) ) ); ?></h2>
+	<ul>
+		<li><?php esc_html_e( 'Check-in time', 'woocommerce-accommodation-bookings' ); ?> <?php echo esc_html( date_i18n( get_option( 'time_format' ), strtotime( "Today " . $check_in ) ) ); ?></li>
+		<li><?php esc_html_e( 'Check-out time', 'woocommerce-accommodation-bookings' ); ?> <?php echo esc_html( date_i18n( get_option( 'time_format' ), strtotime( "Today " . $check_out ) ) ); ?></li>
+	</ul>
+<?php }
+add_action('woocommerce_after_single_product_summary', 'hc_arrive_depart_time');
