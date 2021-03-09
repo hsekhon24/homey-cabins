@@ -19,13 +19,13 @@ if (function_exists ('get_field')):
 
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); ?>
-
+        <div class="random-testimonial">
             <?php the_content(); ?>
                 <?php break; ?>
            <?php endforeach; ?>
-   
+        </div>
     <?php 
-    // Reset the global post object so that the rest of the page works correctly.
-    wp_reset_postdata(); ?>
-<?php endif; ?>
+        // Reset the global post object so that the rest of the page works correctly.
+         wp_reset_postdata(); ?>
+    <?php endif; ?>
 <?php endif; ?>
