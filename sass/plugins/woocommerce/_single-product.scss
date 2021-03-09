@@ -1,11 +1,17 @@
 .single-product {
-
+	.product {
+		max-width: 900px;
+		margin: 0 auto;
+		background-color: #fff;
+		padding: 50px;
+	}
+	
 
 	main{
 		position: relative;
 		top: 100px;
 	//	max-width: 1200px;
-	background-color: rgb(201, 184, 184);
+		background-color: rgb(201, 184, 184);
 		margin: 0 auto;
 		font-family: $font__content;
 		padding-top: 50px;
@@ -108,12 +114,6 @@
 
 //----------------------------
 
-.product:not(.random-testimonial) {
-	max-width: 900px;
-	margin: 0 auto;
-	background-color: #fff;
-	padding: 50px;
-}
 
 /* Title */
 .product_title .entry-title {
@@ -125,7 +125,10 @@
 	display: none;
 }
 
-class="woocommerce-product-gallery__image"
+.woocommerce-product-gallery__image{
+	width: 800px;
+	height: auto;
+}
 
 .cart {
 	text-align: center;
