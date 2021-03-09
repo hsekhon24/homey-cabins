@@ -276,11 +276,11 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 // Remove catalog ordering dropdown from cabins page
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 ); 
 
-//Remove cabin image from top
+//Remove cabin image from top on all cabins page / shop page
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 ); 
 
 //Add cabin image again after the title
-add_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_product_thumbnail', 15);
+add_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_product_thumbnail', 15);
 
 
 // To change 'Read More' text to 'More info' on shop page
@@ -352,7 +352,7 @@ function homey_cabins_display_random_testimonial() {
 		}
 		 
 	}
-add_action( 'woocommerce_after_single_product_summary', 'homey_cabins_display_random_testimonial', 25 );
+add_action( 'woocommerce_after_single_product', 'homey_cabins_display_random_testimonial', 25 );
 
 
 /* Remove tabs from single cabin page */
@@ -372,6 +372,8 @@ add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_des
 
 
 function hc_arrive_depart_time() {
+
+
 	$check_in  = WC_Product_Accommodation_Booking::get_check_times( 'in' );
 	$check_out = WC_Product_Accommodation_Booking::get_check_times( 'out' );
 	?>
@@ -380,5 +382,8 @@ function hc_arrive_depart_time() {
 		<li><?php esc_html_e( 'Check-in time', 'woocommerce-accommodation-bookings' ); ?> <?php echo esc_html( date_i18n( get_option( 'time_format' ), strtotime( "Today " . $check_in ) ) ); ?></li>
 		<li><?php esc_html_e( 'Check-out time', 'woocommerce-accommodation-bookings' ); ?> <?php echo esc_html( date_i18n( get_option( 'time_format' ), strtotime( "Today " . $check_out ) ) ); ?></li>
 	</ul>
-<?php }
+	
+<?php 
+}
+
 add_action('woocommerce_after_single_product_summary', 'hc_arrive_depart_time');

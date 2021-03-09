@@ -125,6 +125,8 @@
 	display: none;
 }
 
+class="woocommerce-product-gallery__image"
+
 .cart {
 	text-align: center;
 }
@@ -187,10 +189,12 @@ blockquote {
 //	background-color: black;
 	line-height: 2em;
 	text-align: center;
+	font-size: 1.1em;
 }
 
 .wp-block-quote.is-style-large cite {
-	text-align: right;
+	display: block;
+	text-align: center;
 }
 
 .woocommerce-product-details__short-description p{
