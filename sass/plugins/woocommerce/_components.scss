@@ -275,3 +275,10 @@ p.no-comments {
 		}
 	}
 }
+
+
+/* Hide woocommerce breadcrumbs (e.g Home/Shop/uncategorised) */
+
+.woocommerce-breadcrumb {
+	display: none;
+}

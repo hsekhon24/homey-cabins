@@ -304,9 +304,9 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 
 /* Remove sidebar from shop page */
 
-function homey_cabins_remove_sidebar_shop_page() {
+function homey_cabins_remove_sidebar_shop_product_page() {
 
-    if ( is_shop() ) {
+    if ( is_shop() || is_product() ) {
 
     remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
@@ -314,7 +314,7 @@ function homey_cabins_remove_sidebar_shop_page() {
 
 }
 
-add_action( 'wp', 'homey_cabins_remove_sidebar_shop_page' );
+add_action( 'wp', 'homey_cabins_remove_sidebar_shop_product_page' );
 
 
 /* Add random testimonial on single product page */
@@ -328,3 +328,5 @@ function homey_cabins_display_random_testimonial() {
 		 
 	}
 add_action( 'woocommerce_after_single_product_summary', 'homey_cabins_display_random_testimonial', 25 );
+
+
