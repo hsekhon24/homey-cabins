@@ -1,41 +1,93 @@
-.page-id-26
-{ 
-    article {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    .wp-block-media-text__media img {
-    width: 60px;
-    height: auto;
-    }
-    // .page-id-26
-    // {    
-    //     article {
-    //         width: 80%;
-    //         margin: 0 auto;
-    //     }
+// .page-id-26
+// { 
+//     article {
+//         max-width: 800px;
+//         margin: 0 auto;
+//     }
+//     .wp-block-media-text__media img {
+//     width: 60px;
+//     height: auto;
+//     }
+//     // .page-id-26
+//     // {    
+//     //     article {
+//     //         width: 80%;
+//     //         margin: 0 auto;
+//     //     }
     
-    //     h2{
-    //         position: absolute;
+//     //     h2{
+//     //         position: absolute;
             
-    //         font-size: 1em;
-    //     }
+//     //         font-size: 1em;
+//     //     }
     
-    //     .wp-block-media-text__media{
-    //         width: 20px;
-    //         float: left;
-    //     }
+//     //     .wp-block-media-text__media{
+//     //         width: 20px;
+//     //         float: left;
+//     //     }
     
-    //     .wp-block-media-text__media img {
-    //         width: 100%;
-    //         height: auto;
-    //         position: relative;
-    //     }
+//     //     .wp-block-media-text__media img {
+//     //         width: 100%;
+//     //         height: auto;
+//     //         position: relative;
+//     //     }
     
-    //     .wp-block-media-text__content{
-    //         width: calc(100% - 20px);
-    //         float: left;
-    //     }
+//     //     .wp-block-media-text__content{
+//     //         width: calc(100% - 20px);
+//     //         float: left;
+//     //     }
             
-    // }
+//     // }
+//     }
+
+#post-26{    
+    width: 80%;
+    margin: 0 auto; 
+    
+    .entry-header{
+        .entry-title{
+            font-size: 1.5em;
+            text-align: center;
+        }
     }
+
+    .entry-content{
+        display: block;        
+
+        h2{
+            font-size: 1em;
+            background-color: #00AA8D;
+            color: white;
+            padding: 10px 20px 10px 20px;
+            margin-bottom: 0;
+
+            border-radius: 5px 5px 0 0;
+
+            background-image: linear-gradient(to bottom, #008975, #00AA8D, #008975);
+        }
+
+        
+
+        ul{
+            list-style-type: circle;
+            padding: 10px 40px 20px 38px;
+            margin-left: 0px;
+            margin-top: 0px;
+
+            background-color: #00AA8D;
+            color: white;
+
+            border-radius: 0 0 5px 5px;
+
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, .3);
+
+            background-image: linear-gradient(to bottom, #008975, #00AA8D);
+        }
+
+        .wp-block-group{
+            h2:last-child{
+                background-color: transparent;
+            }
+        }
+    }
+}

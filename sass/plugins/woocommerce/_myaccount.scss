@@ -1,36 +1,57 @@
 
 #post-16{
-    width: fit-content;
+    width: 60%;
     margin: 20px auto;
     border: 1px solid #000;
     padding: 50px;
 
     background-color: rgba(0,0,0,.6);
+    background-image: linear-gradient(to right, rgba(0,0,0,.5), rgba(0,0,0,.4), rgba(0,0,0,.5));
     border-radius: 5px;
 
     color: #fff;
 
-    .woocommerce-LostPassword a{
-        color: #fff;
-     }
+    a{
+        color: #fff !important;
+    }
 
-     .woocommerce-form{
-        .woocommerce-form-row{
-            label{
-                width: 100%;
-            }
-
-            input{
-                width: 100%;
-            }
+    .entry-header{
+        h1.entry-title{
+            font-size: 1.5em;
+            text-align: center;
         }
     }
 
-    h1, h2{
-        text-align: center;
-    }
+    .entry-content{
+        .woocommerce{
+            h2{
+                font-size: 1em;
+                text-align: center;
+            }
 
-    .woocommerce-form__label-for-checkbox{
-        float: left;
+            .woocommerce-form{
+                .woocommerce-form-row{
+                    label{
+                        width: 100%;
+                    }
+
+                    input{
+                        width: 100%;
+                    }
+                }
+
+                .form-row{
+                    label{
+                        display: block;
+                        margin-bottom: 20px;
+                    }
+
+                    button{
+                        display: block;
+                        width: fit-content;
+                    }
+                }
+            }
+        }
     }
 }
