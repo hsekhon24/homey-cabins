@@ -1,8 +1,28 @@
+// .site-header .main-navigation .toggled {
+// 	position: relative;
+
+// }
+
+// .site-header .menu-toggle {
+// 	cursor: pointer;
+// 	border: 0;
+// 	background-color: transparent;
+// 	padding: 0;
+// 	margin-right: 20px;
+// }
+
+// .menu-toggle, .main-navigation.toggled ul {
+//     display: block;
+//     right: 0;
+//     top: 0;
+// }
+
+
 .main-navigation {
 	display: block;
 	width: 100%;
 	position: relative;
-	top: 20%;
+	top: 30%;
 	z-index: 9999;
 
 
@@ -38,6 +58,9 @@
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	// position: absolute;
+	// top: 0;
+	// right: 0;
 
 }
 

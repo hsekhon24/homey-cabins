@@ -3,14 +3,13 @@
 		max-width: 900px;
 		margin: 0 auto;
 		background-color: #fff;
-		padding: 50px;
+		padding: 20px;
 	}
 	
 
 	main{
 		position: relative;
-		top: 100px;
-	//	max-width: 1200px;
+		top: 50px;
 		background-color: rgb(201, 184, 184);
 		margin: 0 auto;
 		font-family: $font__content;
@@ -59,7 +58,6 @@ h2 {
 }
 
 .wc-bookings-booking-form {
-	width: 80%;
 	margin: 0 auto;
 }
 
@@ -69,7 +67,7 @@ h2 {
 		background-color: rgb(44, 51, 57);
 		border: white solid 2px;
 		padding: 15px;
-		width:400px;
+		width:200px;
 		margin-top: 30px;
 }
 
@@ -77,20 +75,6 @@ h2 {
 	background-color: rgb(83, 32, 32);
 }
 
-// a.button, 
-// button.button, 
-// input.button, 
-// #review_form #submit {
-//   background:black; 
-//   width: 200px;
-// }
-
-
-
-/* Product Gallery */
-.data-thumb {
-	width: 33.33%;
-}
 
 /* Testimonial */
 
@@ -112,8 +96,7 @@ blockquote {
 
 
 .wp-block-quote.is-style-large p{
-//	color: white;
-//	background-color: black;
+
 	line-height: 2em;
 	text-align: center;
 	font-size: 1.1em;
@@ -130,7 +113,43 @@ blockquote {
 	margin-bottom: 40px;
 }
 
-	
+
+/* Product Gallery */
+ol.flex-control-nav.flex-control-thumbs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+	flex-wrap: wrap;
+    justify-content: space-around;
+  
+	margin-bottom: 80px;
+
+	img {
+		
+	box-shadow: 0 0 25px lightgrey, 0 0 5px grey;
+	}
+}
+
+@media screen and (min-width: 768px){
+.single-product {
+
+	main {
+		top: 100px;
+	}
+
+	.product {
+		padding: 50px;
+	}
+
+	.wc-bookings-booking-form {
+		width: 80%;
+	}
+	.site-footer {
+		top: 50px;
+	}
+}
+}
 	// div.product {
 	// 	position: relative;
 	

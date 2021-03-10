@@ -1,26 +1,112 @@
-@media screen and (min-width: 37.5em){
+.page-id-22 .entry-content {
+    margin: 0;
+}
 
-    .page-id-22 .entry-content {
-        margin: 0;
-    }
+.banner-video-container {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+   
+}
+.banner-video-container video {
+    position:relative;
+    top: 0;
+    left: 0; 
+    opacity: 0.80;
+   max-width: 100%;
+   height: auto;
+   z-index: 2;
+}
 
-    .banner-video-container {
-        margin: 0;
-        padding: 0;
-        background-color: black;
-       
+.content-on-video {
+    text-align: center;
+}
+
+.content-on-video p {
+    color: rgb(59, 15, 15);
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.5em;
+
+}
+
+.content-on-video a {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(44, 51, 57);
+    border: white solid 2px;
+    padding: 15px;
+   // border-radius: 30px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.cabins-overview {
+    display: block;
+    margin: 40px 20px 20px 20px;
+   
+}
+
+.cabins-overview-content {
+    img {
+        display: block;
+        margin: 0 auto;
     }
+}
+
+.places-nearby-gallery {
+    background-color: rgb(110, 103, 59);
+    padding: 20px;
+h2 {
+    text-align: center;
+    color: white;
+    font-size: medium;
+    }
+}
+
+#lightgallery {
+    text-align: center;
+    a {
+        img {
+            margin: 2px;
+            border: 2px solid white;
+        }
+    }
+}
+
+@media screen and (min-width: 600px){
+.content-on-video p {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.5em;
+
+}
+
+.content-on-video {
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    z-index: 4;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.cabins-overview-content {
+    img {
+    width: 450px;
+    height: auto;
+
+    }
+}
+}
+
+@media screen and (min-width: 1280px){
+
     .banner-video-container video {
-        position:relative;
-        top: 0;
-        left: 0; 
-      opacity: 0.80;
-    
        width: 100%;
        height: 100vh;
        object-fit: cover;
-
-       z-index: 2;
     }
 
     .content-on-video {
@@ -76,18 +162,14 @@
 
   .places-nearby-gallery {
       padding: 50px 150px 70px 150px;
-    //  background-color: #0b1318c7;
-    background-color: rgb(110, 103, 59);
-
 
       h2 {
           width: 500px;
-          text-align: center;
          margin-left: auto;
          margin-right: auto;
-          color: white;
           padding: 10px;
           border: 1px solid white;
+          font-size: xx-large;
       }
   }
 

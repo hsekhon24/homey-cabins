@@ -20,8 +20,8 @@ function homey_cabins_woocommerce_setup() {
 	add_theme_support(
 		'woocommerce',
 		array(
-			'thumbnail_image_width' => 150,
-			'single_image_width'    => 300,
+			'thumbnail_image_width' => 400,
+			'single_image_width'    => 800,
 			'product_grid'          => array(
 				'default_rows'    => 3,
 				'min_rows'        => 1,
@@ -31,9 +31,9 @@ function homey_cabins_woocommerce_setup() {
 			),
 		)
 	);
-	add_theme_support( 'wc-product-gallery-zoom' );
+	//add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
-//	add_theme_support( 'wc-product-gallery-slider' );
+	add_theme_support( 'wc-product-gallery-slider' );
 }
 add_action( 'after_setup_theme', 'homey_cabins_woocommerce_setup' );
 
@@ -297,11 +297,11 @@ add_filter( 'woocommerce_product_add_to_cart_text', function( $text ) {
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 
-// Remove product thumbnail gallery from Single Products page
-remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 ); 
+// // Remove product thumbnail gallery from Single Products page
+// remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 ); 
 
-// Re-add product thumbnail gallery at bottom on Single Products page
-add_action( 'woocommerce_after_single_product_summary', 'woocommerce_show_product_thumbnails', 25 );
+// // Re-add product thumbnail gallery at bottom on Single Products page
+// add_action( 'woocommerce_after_single_product_summary', 'woocommerce_show_product_thumbnails', 25 );
 
 
 // Remove product title from Single Products page
@@ -388,3 +388,9 @@ function hc_arrive_depart_time() {
 }
 
 add_action('woocommerce_after_single_product_summary', 'hc_arrive_depart_time');
+
+
+/* To change position of call for credit form (Enter purchase amount box) on gift certificate page */
+$obj_inst = WC_SC_Purchase_Credit::get_instance();
+remove_action( 'woocommerce_single_product_summary', array(  $obj_inst, 'call_for_credit_form' ), 20 );
+add_action( 'woocommerce_single_product_summary', array(  $obj_inst, 'call_for_credit_form' ), 29 );

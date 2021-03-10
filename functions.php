@@ -175,6 +175,7 @@ function homey_cabins_scripts() {
 	//Google map
 	wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCIKMOtFacMI_MLIJz8eIZ9LklBA_B846E' );
 	wp_enqueue_script( 'google-map-init', get_template_directory_uri().'/js/google-map.js', array('jquery', 'google-map'), '20210305', true );
+	
 }
 add_action( 'wp_enqueue_scripts', 'homey_cabins_scripts' );
 
