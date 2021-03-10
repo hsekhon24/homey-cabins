@@ -103,8 +103,8 @@
 	li.product {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 80px 1fr 1fr;
-		row-gap: 15px;
+		//grid-template-rows: 80px 1fr 1fr;
+		//row-gap: 15px;
 		padding: 20px;
 
 	}
@@ -114,6 +114,8 @@
 		background-color: rgba(175, 171, 171, 0.616);
 		a{
 			color: black;
+			text-decoration: none;
+			margin: 0 auto;
 		}
 	}
 
@@ -123,15 +125,21 @@
 		background-color: rgb(39, 73, 39);
 		a {
 			color: white;
+			text-decoration: none;
+			margin: 0 auto;
 		}
 	}
 
 	li.product p, li.product div {
 		order: 1;
+		text-align: justify;
+    	text-justify: inter-word;
+		padding: 15px;
 	}
 
 	li.product a.button.product_type_accommodation-booking.add_to_cart_button {
 		order: 2;
+		margin-bottom: 15px;
 	}
 
 	li.product img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
@@ -150,8 +158,22 @@
 	display: none;
 }
 
- 
-
+@media screen and (min-width: 768px){
+	.post-type-archive-product {
+		a.button.product_type_accommodation-booking.add_to_cart_button{
+			width: 30%;	
+			height: auto;
+			font-size: x-large;	
+		}
+		li.product p, li.product div {
+			font-size: 1.7rem;
+		}
+		li.product a {
+			font-size: 2rem;
+		}
+	}
+	
+}
 @media screen and (min-width: 1024px){
 	.post-type-archive-product {
 	ul.products  {
@@ -162,11 +184,20 @@
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 80px 1fr 80px;
 		column-gap: 40px;
-		row-gap: 15px;
+		//row-gap: 15px;
 		padding: 40px 80px;
 	}	
+	a.button.product_type_accommodation-booking.add_to_cart_button{
+		width: 50%;
+		height: auto;	
 
-
+	}
+	li.product p, li.product div {
+		font-size: 1.2rem;
+	}
+	li.product a {
+		font-size: 1.5rem;
+	}
 
 	li.product:nth-of-type(odd) .woocommerce-loop-product__link {   //Cabin Title
 		grid-column: span 1/2; 
@@ -176,12 +207,13 @@
 	li.product:nth-of-type(odd) p, li.product:nth-of-type(odd) div {
 		grid-column: 1/1;
 		grid-row: 2/2;
-		width: 70%;
+		//width: 70%;
 	}
 	li.product:nth-of-type(odd) a.button.product_type_accommodation-booking.add_to_cart_button {
 		grid-row: 3/3;
 		grid-column: span 1/2;
-		margin-left: 50px;
+		
+		//margin-left: 50px;
 	
 	}
 	li.product:nth-of-type(odd) img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
@@ -194,13 +226,13 @@
 	li.product:nth-of-type(even) h2.woocommerce-loop-product__title { // Cbin title
 		grid-column: span 1/2; 
 		grid-row: 1/1;
-
+	
 	
 	}
 	li.product:nth-of-type(even) p, li.product:nth-of-type(even) div  {
 		grid-column: 2/2;
 		grid-row: 2/2;
-		width: 70%;
+		//width: 70%;
 
 	
 	}
@@ -208,14 +240,15 @@
 		grid-row: 3/3;
 		grid-column: 2/2;
 		order: 0;
-		margin-right: 50px;
+		
+		//margin-right: 50px;
 
 	}
 	li.product:nth-of-type(even) img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
 		grid-row: span 2/3;
 		grid-column: 1/1;
-
 		width: 400px;
+		padding-top: 80px;
 	}
 		
 }
@@ -226,7 +259,8 @@
 
 	li.product {
 		padding: 40px 150px;
-	}	
-
+	}
+	
+	
 	}
 }

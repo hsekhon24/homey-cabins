@@ -23,7 +23,7 @@
 .surrounding-activities{
     text-align: center;
     padding: 20px; 
-    background-color:rgb(218, 243, 198);
+    background-color:rgba(236, 247, 138, 0.616);
 }
 .surrounding-activities h2{
     text-align: center;
@@ -91,7 +91,15 @@
         width: 100%;
         padding: 10px;
     }
-
+    .surrounding-activities p{
+        font-size: 1.7rem;
+    }
+    .surrounding-activities h2{
+        font-size: 2.5rem;
+    }
+    .surrounding-activities h3{
+        font-size: 2rem;
+    }
 }
 @media screen and (min-width: 1024px){
     .surrounding-activities {
@@ -104,10 +112,12 @@
             text-align: center;
             margin: 30px;
             font-family: $font__content;
+            font-size: 1.5rem;
         }
         p{
         text-align: justify;
         text-justify: inter-word;
+        font-size: 1.2rem;
         }
     }
     .surrounding-activities-content{
