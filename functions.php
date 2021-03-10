@@ -103,6 +103,8 @@ if ( ! function_exists( 'homey_cabins_setup' ) ) :
 			)
 		);
 
+		
+
 	}
 endif;
 add_action( 'after_setup_theme', 'homey_cabins_setup' );

@@ -1,13 +1,16 @@
-.wc-proceed-to-checkout {
-	a {
-		color: white;
-		text-decoration: none;
-		background-color: rgb(44, 51, 57);  
-		padding: 20px;
+.page-id-15 {
+    .site-main {
+    margin: 0 20px;
 	}
 }
 
 @media screen and (min-width: 768px) {
+	.page-id-15 {
+		.site-main {
+		margin: 0 150px;
+		}
+	}
+	
 
 	.col2-set {
 

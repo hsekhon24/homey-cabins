@@ -319,13 +319,15 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
 /*Add product image after description on single product page */
 add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_images', 25 );
 
+/* Change price location only on cabin pages */
 
 
-/*Add product price on single product page */
+/*Remove product price on single product page*/
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 
 /*Add product price after description on single product page */
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 28 );
+
 
 /* Remove sidebar from shop page */
 
@@ -367,12 +369,11 @@ add_filter( 'woocommerce_product_tabs', 'remove_product_tabs', 98, 1 );
 
 // Tabs callback function after single content.
 add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
-//add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_additional_information_tab' );
-//add_action('woocommerce_after_single_product_summary', 'add_time_tab_content');
+
 
 
 function hc_arrive_depart_time() {
-
+	if ( is_product() && has_term( 'cabins', 'product_cat' ) ){
 
 	$check_in  = WC_Product_Accommodation_Booking::get_check_times( 'in' );
 	$check_out = WC_Product_Accommodation_Booking::get_check_times( 'out' );
@@ -383,7 +384,7 @@ function hc_arrive_depart_time() {
 		<li><?php esc_html_e( 'Check-out time', 'woocommerce-accommodation-bookings' ); ?> <?php echo esc_html( date_i18n( get_option( 'time_format' ), strtotime( "Today " . $check_out ) ) ); ?></li>
 	</ul>
 	
-<?php 
+<?php }
 }
 
 add_action('woocommerce_after_single_product_summary', 'hc_arrive_depart_time');
