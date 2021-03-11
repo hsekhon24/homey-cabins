@@ -9,12 +9,16 @@
         border: white solid 2px;
         padding: 15px;
         width: 200px;
-        margin-top: 50px;
+        margin-top: 70px;
         margin-bottom: 50px;
     }
 
     .price {
         display: none;
+    }
+
+    img.wp-post-image {
+        margin-bottom: 0;
     }
 
     div#call_for_credit {
@@ -24,13 +28,23 @@
             margin: 10px;
         }
     }
+
+    .quantity {
+        text-align: center;
+        label {
+            margin: 10px;
+        }
+    }
 }
 
 @media screen and (min-width: 1024px) {
+.postid-230 {
     div#call_for_credit {
+
+        text-align: left;
         .wc-sc-row {
             display: flex;
-            justify-content: center;
+           
         }
         .wc-sc-label {
             margin-bottom: 10px;
@@ -38,6 +52,12 @@
 
         .wc-sc-input {
             margin-top: 10px;
+            margin-left: 52px;
         }
     }
+
+    .quantity {
+        text-align: left;
+    }
+}
 }
