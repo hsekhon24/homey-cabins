@@ -27,6 +27,7 @@
     font-size: 25px;
     font-weight: bold;
     line-height: 1.5em;
+    font-family: 'Roboto Slab', serif;
 
 }
 
@@ -44,7 +45,10 @@
 .cabins-overview {
     display: block;
     margin: 40px 20px 20px 20px;
-   
+    .cabins-overview-content p{
+        line-height: 2em;
+        font-size: 16px;
+   }
 }
 
 .cabins-overview-content {
@@ -136,6 +140,10 @@ h2 {
        // border-radius: 30px;
         font-size: large;
         font-weight: bold;
+    }
+
+    .content-on-video a:hover {
+        background-color: rgba(44, 51, 57, 0.651);  
     }
 
     .cabins-overview {

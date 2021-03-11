@@ -8,6 +8,16 @@
     text-align: justify;
     text-justify: inter-word;   
 }
+
+.about-owners-content img {
+    display: block;
+    margin: 0 auto;
+}
+
+.history-images {
+    text-align: center;
+}
+
 .history-cabins{
     padding: 15px ;
 }
@@ -23,7 +33,7 @@
 .surrounding-activities{
     text-align: center;
     padding: 20px; 
-    background-color:rgba(236, 247, 138, 0.616);
+    background-color:rgb(243, 243, 243);
 }
 .surrounding-activities h2{
     text-align: center;
@@ -93,6 +103,7 @@
     }
     .surrounding-activities p{
         font-size: 1.7rem;
+        height: 250px;
     }
     .surrounding-activities h2{
         font-size: 2.5rem;
@@ -110,8 +121,7 @@
         h2{
             width: 100%;
             text-align: center;
-            margin: 30px;
-            font-family: $font__content;
+           margin: 30px;
             font-size: 1.5rem;
         }
         p{
@@ -133,7 +143,6 @@
             width: 100%;
             text-align: center;
             margin: 30px;
-            font-family: $font__content;
         }
     }
         .surrounding-activities-content{
@@ -166,7 +175,6 @@
     }
     .history-cabins h2{
         text-align: center;
-        font-family: $font__content;
     }
     .history-cabins p{
         text-align: justify;
@@ -198,7 +206,6 @@
             width: 100%;
             text-align: center;
             margin: 30px;
-            font-family: $font__content;
         }
         p{
         text-align: justify;
@@ -222,7 +229,6 @@
     }
     .surrounding-areas h2{
         text-align: center; 
-        font-family: $font__content; 
     }
     .surrounding-areas img{
        

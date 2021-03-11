@@ -64,7 +64,7 @@
 
 }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 1050px) {
 
 	.menu-toggle {
 		display: none;
@@ -95,7 +95,8 @@
 	}
 
 	.main-navigation ul li a:hover {
-		color: 	rgb(102, 43, 25);
+		//color: 	rgb(102, 43, 25);
+		color: 	rgba(121, 118, 117, 0.822);
 	}
 
 	.main-navigation ul ul {
@@ -115,7 +116,7 @@
 			top: 0;
 		}
 		li {
-			background-color: rgba(121, 118, 117, 0.623);
+			background-color: white;
 	
 			&:hover > ul,
 			&.focus > ul {
@@ -125,7 +126,7 @@
 		}
 
 		a {
-			color: white;
+			color: $color__link;
 			font-weight: normal;
 			width: max-content;
 			padding-top: 10px;
@@ -134,7 +135,7 @@
 		}
 		:hover > a,
 		.focus > a {
-			background-color: rgba(121, 118, 117, 0.8);;
+		color: rgb(105, 52, 33);
 		}
 		a:hover,
 		a.focus {

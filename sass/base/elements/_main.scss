@@ -5,6 +5,20 @@ main {
 .page:not(.page-id-22)  {    //not home page
     main{
     position: relative;
-    top: 100px;
+    top: 20px;
     }
 }
+
+@media screen and (min-width: 768px){
+    .page:not(.page-id-22)  {    //not home page
+        main{
+        top: 100px;
+        }
+    }
+}
+
+// p {
+//     text-align: justify;
+//     text-justify: inter-word;
+
+// }

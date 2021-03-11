@@ -60,7 +60,7 @@
 // }
 .post-type-archive-product {
 	main{
-	top: 100px;
+	top: 20px;
 	position: relative;
 	//max-width: 1200px;
 	margin: 0;
@@ -111,7 +111,7 @@
 
 	li.product:nth-of-type(odd) {
 		color: black;
-		background-color: rgba(175, 171, 171, 0.616);
+		background-color: rgba(175, 171, 171, 0.616); // lightgrey
 		a{
 			color: black;
 			text-decoration: none;
@@ -122,7 +122,7 @@
 	
 	li.product:nth-of-type(even) {
 		color: white;
-		background-color: rgb(39, 73, 39);
+		background-color: rgb(140, 167, 140); // lightgreen
 		a {
 			color: white;
 			text-decoration: none;
@@ -176,6 +176,7 @@
 }
 @media screen and (min-width: 1024px){
 	.post-type-archive-product {
+	
 	ul.products  {
 		margin: 0;
 	}
@@ -256,7 +257,9 @@
 
 @media screen and (min-width: 1440px){
 	.post-type-archive-product {
-
+		main{
+			top: 100px;
+			}
 	li.product {
 		padding: 40px 150px;
 	}

@@ -138,7 +138,8 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 function homey_cabins_scripts() {
 	wp_enqueue_style(
 		'hc-googlefonts', 
-		'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Open+Sans:wght@300;400;700&display=swap', 
+		'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Open+Sans:wght@300;400;700&display=swap',
+		'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap', 
 		array(),
 		null
 );
