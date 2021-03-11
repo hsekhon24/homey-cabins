@@ -1,94 +1,30 @@
-// ul.products {
-// 	margin: 0;
-// 	padding: 0;
-
-// 	li.product {
-// 		list-style: none;
-// 		position: relative;
-// 		margin-bottom: 2em;
-
-// 		img {
-// 			display: block;
-// 		}
-
-// 		.button {
-// 			display: block;
-// 		}
-// 	}
-// }
-
-// @media screen and (min-width: 48em) {
-
-// 	ul.products {
-
-// 		li.product {
-
-// 			@include column-width(3);
-// 			float: left;
-// 			margin-right: $columns__margin;
-
-// 			&.first {
-// 				clear: both;
-// 			}
-
-// 			&.last {
-// 				margin-right: 0;
-// 			}
-// 		}
-// 	}
-
-// 	ul.products.columns-1 {
-
-// 		li.product {
-// 			float: none;
-// 			width: 100%;
-// 		}
-
-// 	}
-
-// 	@for $i from 2 through 6 {
-
-// 		ul.products.columns-#{$i} {
-
-// 			li.product {
-
-// 				@include column-width( $i );
-// 			}
-
-// 		}
-// 	}
-// }
 .post-type-archive-product {
-	main{
-	top: 20px;
-	position: relative;
-	//max-width: 1200px;
-	margin: 0;
-	font-family: $font__content;
-
+	main {
+		top: 20px;
+		position: relative;
+		margin: 0;
+		font-family: $font__content;
 	}
-	.surrounding-activities{
-	position: relative;
-	top: 100px;
+	.surrounding-activities {
+		position: relative;
+		top: 100px;
 	}
-	.site-footer{
-	position: relative;
-	top: 100px;
+	.site-footer {
+		position: relative;
+		top: 100px;
 	}
-	a.button.product_type_accommodation-booking.add_to_cart_button{
+	a.button.product_type_accommodation-booking.add_to_cart_button {
 		text-decoration: none;
 		color: white;
 		background-color: rgb(44, 51, 57);
 		border: white solid 2px;
 		padding: 15px;
-	//	margin: 0 35%;
 		font-size: large;
 		font-weight: bold;
 		text-align: center;
 		width: 50%;
 		margin: 0 auto;
 		height: 60px;
-		
 	}
 
 	ul.products {
@@ -103,23 +39,19 @@
 	li.product {
 		display: grid;
 		grid-template-columns: 1fr;
-		//grid-template-rows: 80px 1fr 1fr;
-		//row-gap: 15px;
 		padding: 20px;
-
 	}
 
 	li.product:nth-of-type(odd) {
 		color: black;
 		background-color: rgba(175, 171, 171, 0.616); // lightgrey
-		a{
+		a {
 			color: black;
 			text-decoration: none;
 			margin: 0 auto;
 		}
 	}
 
-	
 	li.product:nth-of-type(even) {
 		color: white;
 		background-color: rgb(140, 167, 140); // lightgreen
@@ -130,10 +62,11 @@
 		}
 	}
 
-	li.product p, li.product div {
+	li.product p,
+	li.product div {
 		order: 1;
 		text-align: justify;
-    	text-justify: inter-word;
+		text-justify: inter-word;
 		padding: 15px;
 	}
 
@@ -146,124 +79,107 @@
 		width: 85%;
 		margin: 0 auto;
 	}
-
 }
 
-
-
-.woocommerce-breadcrumb{
+.woocommerce-breadcrumb {
 	display: none;
 }
 .woocommerce-products-header__title {
 	display: none;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
 	.post-type-archive-product {
-		a.button.product_type_accommodation-booking.add_to_cart_button{
-			width: 30%;	
+		a.button.product_type_accommodation-booking.add_to_cart_button {
+			width: 30%;
 			height: auto;
-			font-size: x-large;	
+			font-size: x-large;
 		}
-		li.product p, li.product div {
+		li.product p,
+		li.product div {
 			font-size: 1.7rem;
 		}
 		li.product a {
 			font-size: 2rem;
 		}
 	}
-	
 }
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
 	.post-type-archive-product {
-	
-	ul.products  {
-		margin: 0;
-	}
-	li.product {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 80px 1fr 80px;
-		column-gap: 40px;
-		//row-gap: 15px;
-		padding: 40px 80px;
-	}	
-	a.button.product_type_accommodation-booking.add_to_cart_button{
-		width: 50%;
-		height: auto;	
+		ul.products {
+			margin: 0;
+		}
+		li.product {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 80px 1fr 80px;
+			column-gap: 40px;
+			padding: 40px 80px;
+		}
+		a.button.product_type_accommodation-booking.add_to_cart_button {
+			width: 50%;
+			height: auto;
+		}
+		li.product p,
+		li.product div {
+			font-size: 1.2rem;
+		}
+		li.product a {
+			font-size: 1.5rem;
+		}
 
-	}
-	li.product p, li.product div {
-		font-size: 1.2rem;
-	}
-	li.product a {
-		font-size: 1.5rem;
-	}
+		li.product:nth-of-type(odd) .woocommerce-loop-product__link {
+			//Cabin Title
+			grid-column: span 1/2;
+			grid-row: 1/1;
+		}
+		li.product:nth-of-type(odd) p,
+		li.product:nth-of-type(odd) div {
+			grid-column: 1/1;
+			grid-row: 2/2;
+		}
+		li.product:nth-of-type(odd) a.button.product_type_accommodation-booking.add_to_cart_button {
+			grid-row: 3/3;
+			grid-column: span 1/2;
+		}
+		li.product:nth-of-type(odd) img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
+			grid-row: 2/3;
+			grid-column: 2/2;
+			width: 400px;
+		}
 
-	li.product:nth-of-type(odd) .woocommerce-loop-product__link {   //Cabin Title
-		grid-column: span 1/2; 
-		grid-row: 1/1;
-		
-	}
-	li.product:nth-of-type(odd) p, li.product:nth-of-type(odd) div {
-		grid-column: 1/1;
-		grid-row: 2/2;
-		//width: 70%;
-	}
-	li.product:nth-of-type(odd) a.button.product_type_accommodation-booking.add_to_cart_button {
-		grid-row: 3/3;
-		grid-column: span 1/2;
-		
-		//margin-left: 50px;
-	
-	}
-	li.product:nth-of-type(odd) img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
-		grid-row:  2/3;
-		grid-column: 2/2;
-		width: 400px;
-	}
+		li.product:nth-of-type(even) h2.woocommerce-loop-product__title {
+			// Cbin title
+			grid-column: span 1/2;
+			grid-row: 1/1;
+		}
+		li.product:nth-of-type(even) p,
+		li.product:nth-of-type(even) div {
+			grid-column: 2/2;
+			grid-row: 2/2;
+		}
+		li.product:nth-of-type(even) a.button.product_type_accommodation-booking.add_to_cart_button {
+			grid-row: 3/3;
+			grid-column: 2/2;
+			order: 0;
+		}
 
-
-	li.product:nth-of-type(even) h2.woocommerce-loop-product__title { // Cbin title
-		grid-column: span 1/2; 
-		grid-row: 1/1;
-	
-	
+		li.product:nth-of-type(even) img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
+			grid-row: span 2/3;
+			grid-column: 1/1;
+			width: 400px;
+			padding-top: 80px;
+		}
 	}
-	li.product:nth-of-type(even) p, li.product:nth-of-type(even) div  {
-		grid-column: 2/2;
-		grid-row: 2/2;
-		//width: 70%;
-
-	
-	}
-	li.product:nth-of-type(even) a.button.product_type_accommodation-booking.add_to_cart_button {
-		grid-row: 3/3;
-		grid-column: 2/2;
-		order: 0;
-		
-		//margin-right: 50px;
-
-	}
-	li.product:nth-of-type(even) img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
-		grid-row: span 2/3;
-		grid-column: 1/1;
-		width: 400px;
-		padding-top: 80px;
-	}
-		
-}
 }
 
-@media screen and (min-width: 1440px){
+@media screen and (min-width: 1440px) {
 	.post-type-archive-product {
-		main{
+		main {
 			top: 100px;
-			}
-	li.product {
-		padding: 40px 150px;
-	}
-	
-	
+		}
+		li.product {
+			padding: 40px 150px;
+		}
 	}
 }

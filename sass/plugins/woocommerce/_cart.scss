@@ -1,10 +1,9 @@
 .page-id-14 {
     .site-main {
-    margin: 0 20px;
-    font-family: $font__content;
+        margin: 0 20px;
+        font-family: $font__content;
     }
 
-  
     .shop_table {
         button.button {
             color: white;
@@ -15,58 +14,58 @@
         }
 
         button.button:hover {
-            background-color: rgba(44, 51, 57, 0.651); 
+            background-color: rgba(44, 51, 57, 0.651);
         }
 
         .coupon {
             padding-top: 50px;
             padding-bottom: 50px;
             text-align: right;
-    
+
             button.button {
                 color: white;
                 background-color: brown;
                 border: white solid 2px;
                 padding: 15px;
-      
             }
 
             button.button:hover {
-                background-color:rgba(165, 42, 42, 0.63);
+                background-color: rgba(165, 42, 42, 0.63);
             }
         }
-    
     }
 
     td.actions {
         text-align: right;
     }
 
-   tr.cart-subtotals, tr.tax-rate, tr.order-total {
+    tr.cart-subtotals,
+    tr.tax-rate,
+    tr.order-total {
         line-height: 2.5em;
-   }
- }
+    }
+}
 
 .wc-proceed-to-checkout {
-	text-align: center;
-	margin-top: 100px;
-	a {
-		color: white;
-		text-decoration: none;
-		background-color: rgb(44, 51, 57);  
-		padding: 20px;
-	}
+    text-align: center;
+    margin-top: 100px;
+    a {
+        color: white;
+        text-decoration: none;
+        background-color: rgb(44, 51, 57);
+        padding: 20px;
+    }
 
     a:hover {
-        background-color: rgba(44, 51, 57, 0.651);  
+        background-color: rgba(44, 51, 57, 0.651);
     }
 }
 
 @media screen and (min-width: 600px) {
-.page-id-14 {
-    .site-main {
-    margin: 0 150px;
-    font-family: $font__content;
+    .page-id-14 {
+        .site-main {
+            margin: 0 150px;
+            font-family: $font__content;
         }
     }
 }

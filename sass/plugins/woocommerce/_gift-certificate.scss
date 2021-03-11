@@ -1,15 +1,15 @@
 .postid-230 {
-    .product h2{
+    .product h2 {
         display: none;
     }
 
     button.single_add_to_cart_button.button.alt {
         color: white;
-		background-color: rgb(44, 51, 57);
-		border: white solid 2px;
-		padding: 15px;
-		width:200px;
-		margin-top: 50px;
+        background-color: rgb(44, 51, 57);
+        border: white solid 2px;
+        padding: 15px;
+        width: 200px;
+        margin-top: 50px;
         margin-bottom: 50px;
     }
 
@@ -24,21 +24,20 @@
             margin: 10px;
         }
     }
-
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
     div#call_for_credit {
-        .wc-sc-row{
-        display: flex;
-        justify-content: center;
-    }
-    .wc-sc-label {
-        margin-bottom: 10px;
-    }
+        .wc-sc-row {
+            display: flex;
+            justify-content: center;
+        }
+        .wc-sc-label {
+            margin-bottom: 10px;
+        }
 
-    .wc-sc-input {
-        margin-top: 10px;
+        .wc-sc-input {
+            margin-top: 10px;
+        }
     }
-}
 }

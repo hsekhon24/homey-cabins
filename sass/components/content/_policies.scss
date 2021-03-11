@@ -1,49 +1,39 @@
-
-#post-26{    
+#post-26 {
     width: 80%;
-    margin: 0 auto; 
-    
-    .entry-header{
-        .entry-title{
+    margin: 0 auto;
+
+    .entry-header {
+        .entry-title {
             font-size: 1.5em;
             text-align: center;
         }
     }
 
-    .entry-content{
-        display: block;        
+    .entry-content {
+        display: block;
 
-        h2{
+        h2 {
             font-size: 1em;
             background-color: rgb(140, 167, 140);
             color: white;
             padding: 10px 20px 10px 20px;
             margin-bottom: 0;
-
             border-radius: 5px 5px 0 0;
-            
         }
 
-        
-
-        ul{
+        ul {
             list-style-type: circle;
             padding: 10px 40px 20px 38px;
             margin-left: 0px;
             margin-top: 0px;
-
-  
             color: black;
-
             border-radius: 0 0 5px 5px;
-
-            box-shadow: 0px 0px 1px rgba(0, 0, 0, .3);
-
-            background-color:rgb(243, 243, 243);
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+            background-color: rgb(243, 243, 243);
         }
 
-        .wp-block-group{
-            h2:last-child{
+        .wp-block-group {
+            h2:last-child {
                 background-color: transparent;
             }
         }

@@ -1,51 +1,49 @@
-
-#post-16{
-
+#post-16 {
     margin: 20px auto;
     border: 1px solid #000;
     padding: 50px;
 
-    background: #f5f5f5; 
+    background: #f5f5f5;
     border-radius: 5px;
 
     color: black;
 
-    a{
+    a {
         color: black !important;
     }
 
-    .entry-header{
-        h1.entry-title{
+    .entry-header {
+        h1.entry-title {
             font-size: 1.5em;
             text-align: center;
         }
     }
 
-    .entry-content{
-        .woocommerce{
-            h2{
+    .entry-content {
+        .woocommerce {
+            h2 {
                 font-size: 1em;
                 text-align: center;
             }
 
-            .woocommerce-form{
-                .woocommerce-form-row{
-                    label{
+            .woocommerce-form {
+                .woocommerce-form-row {
+                    label {
                         width: 100%;
                     }
 
-                    input{
+                    input {
                         width: 100%;
                     }
                 }
 
-                .form-row{
-                    label{
+                .form-row {
+                    label {
                         display: block;
                         margin-bottom: 20px;
                     }
 
-                    button{
+                    button {
                         display: block;
                         width: fit-content;
                     }
@@ -55,8 +53,8 @@
     }
 }
 
-@media screen and (min-width: 1024px){
-#post-16{
-    width: 60%;
-}
+@media screen and (min-width: 1024px) {
+    #post-16 {
+        width: 60%;
+    }
 }

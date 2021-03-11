@@ -296,14 +296,6 @@ add_filter( 'woocommerce_product_add_to_cart_text', function( $text ) {
 // Don't display Related products on Single Cabin Page
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
-
-// // Remove product thumbnail gallery from Single Products page
-// remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 ); 
-
-// // Re-add product thumbnail gallery at bottom on Single Products page
-// add_action( 'woocommerce_after_single_product_summary', 'woocommerce_show_product_thumbnails', 25 );
-
-
 // Remove product title from Single Products page
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 ); 
 

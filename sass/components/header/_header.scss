@@ -14,34 +14,17 @@
     width: auto;
 }
 .site-header {
-
     display: flex;
-  justify-content: space-between;
- 
-   position: absolute;
+    justify-content: space-between;
+    position: absolute;
     top: 0;
     height: 72px;
-   
-    // background-color: rgb(107, 55, 17);
-  // background-color: rgb(102, 43, 25);
- 
-   background-color: #fff;
-   
-    opacity: 0.90;
-   z-index: 3;
+    background-color: #fff;
+    opacity: 0.9;
+    z-index: 3;
     width: 100%;
- 
-
-   // z-index: 999;
 }
 
 .mob-standard-logo {
     margin-top: -15px;
-}
-
-
-@media screen and (min-width: 37.5em){
-    
-
-
 }

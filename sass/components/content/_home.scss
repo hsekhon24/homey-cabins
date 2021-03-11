@@ -6,16 +6,15 @@
     margin: 0;
     padding: 0;
     background-color: black;
-   
 }
 .banner-video-container video {
-    position:relative;
+    position: relative;
     top: 0;
-    left: 0; 
-    opacity: 0.80;
-   max-width: 100%;
-   height: auto;
-   z-index: 2;
+    left: 0;
+    opacity: 0.8;
+    max-width: 100%;
+    height: auto;
+    z-index: 2;
 }
 
 .content-on-video {
@@ -27,8 +26,7 @@
     font-size: 25px;
     font-weight: bold;
     line-height: 1.5em;
-    font-family: 'Roboto Slab', serif;
-
+    font-family: "Roboto Slab", serif;
 }
 
 .content-on-video a {
@@ -37,7 +35,6 @@
     background-color: rgb(44, 51, 57);
     border: white solid 2px;
     padding: 15px;
-   // border-radius: 30px;
     font-size: medium;
     font-weight: bold;
 }
@@ -45,10 +42,12 @@
 .cabins-overview {
     display: block;
     margin: 40px 20px 20px 20px;
-    .cabins-overview-content p{
+    .cabins-overview-content p {
         line-height: 2em;
         font-size: 16px;
-   }
+        text-align: justify;
+        text-justify: inter-word;
+    }
 }
 
 .cabins-overview-content {
@@ -61,10 +60,10 @@
 .places-nearby-gallery {
     background-color: rgb(110, 103, 59);
     padding: 20px;
-h2 {
-    text-align: center;
-    color: white;
-    font-size: medium;
+    h2 {
+        text-align: center;
+        color: white;
+        font-size: medium;
     }
 }
 
@@ -78,39 +77,36 @@ h2 {
     }
 }
 
-@media screen and (min-width: 600px){
-.content-on-video p {
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 1.5em;
+@media screen and (min-width: 600px) {
+    .content-on-video p {
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 1.5em;
+    }
 
-}
+    .content-on-video {
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        z-index: 4;
+        text-align: center;
+        transform: translate(-50%, -50%);
+    }
 
-.content-on-video {
-    position: absolute;
-    top: 250px;
-    left: 50%;
-    z-index: 4;
-    text-align: center;
-    transform: translate(-50%, -50%);
-}
-
-.cabins-overview-content {
-    img {
-    width: 450px;
-    height: auto;
-
+    .cabins-overview-content {
+        img {
+            width: 450px;
+            height: auto;
+        }
     }
 }
-}
 
-@media screen and (min-width: 1280px){
-
+@media screen and (min-width: 1280px) {
     .banner-video-container video {
-       width: 100%;
-       height: 100vh;
-       object-fit: cover;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
     }
 
     .content-on-video {
@@ -118,8 +114,8 @@ h2 {
         top: 420px;
         left: 20%;
         z-index: 4;
-      text-align: center;
-      transform: translate(-50%, -50%);
+        text-align: center;
+        transform: translate(-50%, -50%);
     }
 
     .content-on-video p {
@@ -128,7 +124,6 @@ h2 {
         font-weight: bold;
         max-width: 400px;
         line-height: 2em;
-
     }
 
     .content-on-video a {
@@ -137,19 +132,18 @@ h2 {
         background-color: rgb(44, 51, 57);
         border: white solid 2px;
         padding: 15px 40px;
-       // border-radius: 30px;
         font-size: large;
         font-weight: bold;
     }
 
     .content-on-video a:hover {
-        background-color: rgba(44, 51, 57, 0.651);  
+        background-color: rgba(44, 51, 57, 0.651);
     }
 
     .cabins-overview {
         display: flex;
         justify-content: space-between;
-        margin:150px;
+        margin: 150px;
     }
 
     .cabins-overview-content {
@@ -162,39 +156,35 @@ h2 {
 
     .cabins-overview-content {
         img {
-        width: 450px;
-        height: auto;
-        margin: 100px 50px 50px 50px;
+            width: 400px;
+            height: auto;
+            margin: 100px 50px 50px 50px;
         }
     }
 
-  .places-nearby-gallery {
-      padding: 50px 150px 70px 150px;
+    .places-nearby-gallery {
+        padding: 50px 150px 70px 150px;
 
-      h2 {
-          width: 500px;
-         margin-left: auto;
-         margin-right: auto;
-          padding: 10px;
-          border: 1px solid white;
-          font-size: xx-large;
-      }
-  }
+        h2 {
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+            border: 1px solid white;
+            font-size: xx-large;
+        }
+    }
 
-  #lightgallery {
-     text-align: center;
+    #lightgallery {
+        text-align: center;
 
-     a {
-         img {
-             margin: 2px;
-             width: 200px;
-             height: auto;
-             border: 5px solid white;
-         }
-     }
-  }
-    
+        a {
+            img {
+                margin: 2px;
+                width: 200px;
+                height: auto;
+                border: 5px solid white;
+            }
+        }
+    }
 }
-    
-
-

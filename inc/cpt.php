@@ -1,7 +1,7 @@
 <?php   //opening tag should be on line 1, if on line 2 or farther will break your wordpress site
 function hc_register_custom_post_types() {
     
-    // Register Works
+    // Register Testimonials
     $labels = array(
         'name'               => _x( 'Testimonials', 'post type general name' ),
         'singular_name'      => _x( 'Testimonial', 'post type singular name'),
