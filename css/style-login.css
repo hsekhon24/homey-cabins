@@ -1,0 +1,46 @@
+body.login {
+    background-color:  rgb(140, 167, 140); 
+}
+
+body.login div#login form#loginform input {
+    background-color: rgb(243, 243, 243);
+  
+}
+
+body.login div#login form#loginform input:focus {
+    border: solid 3px;
+    border-color:  rgb(140, 167, 140); 
+    box-shadow: none;
+   
+}
+
+body.login div#login form#loginform p.submit input#wp-submit {
+    background-color: rgb(140, 167, 140); 
+}
+
+.login .message {
+    border-left: solid 3px  black; 
+    background-color: rgb(243, 243, 243);
+}
+
+body.login div#login p#nav a {
+    color: black;
+}
+
+body.login div#login p#backtoblog a {
+    color: black;
+}
+
+.login .button.wp-hide-pw:hover {
+    border: solid 2px;
+    border-color: rgb(140, 167, 140); 
+    box-shadow: none;
+}
+
+.login h1 a {
+	background-image: url('../images/w-logo-blue.png?ver=20131202');
+	background-image: none, url('../images/wordpress-logo.svg?ver=20131107');
+	background-size: contain;
+	background-position: center top;
+	background-repeat: no-repeat;
+}

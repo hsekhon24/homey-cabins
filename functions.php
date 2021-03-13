@@ -138,8 +138,7 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 function homey_cabins_scripts() {
 	wp_enqueue_style(
 		'hc-googlefonts', 
-		'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Open+Sans:wght@300;400;700&display=swap',
-		'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap', 
+		'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto+Slab:wght@600&display=swap',
 		array(),
 		null
 );
@@ -221,4 +220,138 @@ require get_template_directory() . '/inc/cpt.php';
 
 /**
 
+ * Lower Yoast SEO Metabox location
+ */
+function yoast_to_bottom(){
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
+
+
+
+//Remove Dashboard Widgets
+function wporg_remove_all_dashboard_metaboxes() {
+// Remove Welcome panel
+remove_action( 'welcome_panel', 'wp_welcome_panel' );
+// Remove the rest of the dashboard widgets
+remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+remove_meta_box( 'health_check_status', 'dashboard', 'normal' );
+remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
+remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal');
+}
+add_action( 'wp_dashboard_setup', 'wporg_remove_all_dashboard_metaboxes' );
+
+
+
+//Add Dashboard Widgets (Welcome and client tutorial videos)
+// This function is hooked into the 'wp_dashboard_setup' action below.
+function hc_add_dashboard_widgets() {
+wp_add_dashboard_widget(
+'homeycabins_welcome_widget', // Widget slug.
+esc_html__( 'Welcome Widget', 'hc' ), // Title.
+'hc_add_widget_function' // Display function.
+);
+}
+add_action( 'wp_dashboard_setup', 'hc_add_dashboard_widgets' );
+// Create the function to output the content of your Dashboard Widget.
+function hc_add_widget_function() {
+// Display whatever you want to show.
+echo '<p>Hello there! This is a Homey Cabins Dashboard Widget. Please see tutorial videos on how to add content to website.
+		</p>
+		<p>
+		Client-tutorial 1 <ul> <li> How to add content on all pages? </li>
+								<li> How to add testimonials? </li>
+								<li> How to make changes to the Single cabin? </li> </ul> </p>
+	<p>	Client-tutorial 2 <ul> <li> How to make changes to Single cabin? (contd.) </li>
+								<li> How to manage bookings? </li> </ul> </p>
+	<p>	<a href="  ' . wp_get_attachment_url( 394 )  .'" target="_blank">Client Tutorial 1</a>
+		<a href="  ' . wp_get_attachment_url( 395 )  .' " target="_blank">Client Tutorial 2</a></</p>';
+}
+
+
+//Remove admin menu items
+function wd_admin_menu_remove() {
+	remove_menu_page( 'edit.php' );
+
+	}
+	add_action( 'admin_menu', 'wd_admin_menu_remove' );
+
+//Remove Menu Items for non-admin users
+function wd_admin_menu_remove_client() {
+	if (!current_user_can('administrator') && !is_admin()){
+remove_menu_page( 'edit-comments.php' );
+	}
+}
+add_action( 'admin_menu', 'wd_admin_menu_remove_client' );
+
+// Add theme styles to block editor
+add_editor_style();
+add_theme_support( 'editor-styles' );
+
+function prefix_block_styles() {
+	wp_enqueue_style( 'prefix-editor-font', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto+Slab:wght@600&display=swap');
+	}
+	add_action( 'enqueue_block_editor_assets', 'prefix_block_styles' );
+	
+
+// Customise Wordpress login page
+
+//Change logo
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png);
+		height:65px;
+		width:320px;
+		background-size: contain;
+		background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+// Link logo to home page
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Your Site Name and Info';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+//Add styles to WP login page
+function my_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/css/style-login.css' );
+    wp_enqueue_script( 'custom-login', get_stylesheet_directory_uri() . '/css/style-login.js' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+
+
+
+// Modifying WYSIWIG Toolbar
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
+function my_toolbars( $toolbars )
+{
+	// Add a new toolbar called "Very Simple"
+	// - this toolbar has only 1 row of buttons
+	$toolbars['Homey Cabins Toolbar' ] = array();
+	$toolbars['Homey Cabins Toolbar' ][1] = array('formatselect', 'bold' , 'italic' , 'underline');
+
+	// return $toolbars - IMPORTANT!
+	return $toolbars;
+}
+
+function ms_post_filter( $use_block_editor, $post ) {
+	if ( 24 === $post->ID || 28 === $post->ID || 22 === $post->ID ) {
+		return false;
+	}
+	return $use_block_editor;
+}
+add_filter( 'use_block_editor_for_post', 'ms_post_filter', 10, 2 );
 

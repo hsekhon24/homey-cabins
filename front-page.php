@@ -38,7 +38,7 @@ get_header();
 			 <?php
 				$file = get_field('banner_video');
 				if( $file ): ?>
-				<video src="<?php echo $file['url']; ?>" autoplay="on">
+				<video loop src="<?php echo $file['url']; ?>" autoplay="on">
 				
 				<?php endif; ?>
 						
@@ -73,7 +73,7 @@ get_header();
 				<?php	if (function_exists ('get_field')):
 					$image = get_field('overview_image');
 					if( !empty( $image ) ): ?>
-						<img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						<img src="<?php echo esc_url($image['sizes']['medium_large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 					<?php endif; ?>
 				<?php endif; ?>
 	</div>

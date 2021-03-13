@@ -1,0 +1,14 @@
+/* Block editor styles */
+
+h1, h2, h3 {
+	color: #504024;
+	font-family: "Roboto Slab", serif;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+}
+
+a {
+	font-family: "Open Sans", sans-serif;
+}

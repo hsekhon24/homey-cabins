@@ -50,7 +50,7 @@ get_header();
 							
 							<h2> History of Cabins </h2>
 							<?php the_field('history'); ?>
-				
+
 						<?php endif; ?>
 					<?php endif; ?>
 		</section>

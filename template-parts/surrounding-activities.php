@@ -37,7 +37,7 @@
 						<?php echo the_sub_field('activity_description'); ?>
 				</p>
 
-					<a href="<?php echo get_sub_field('activity_link'); ?>"> More Info
+					<a href="<?php echo get_sub_field('activity_link'); ?>"> More about <?php echo the_sub_field('activity_title'); ?>
 					</a>
 				</div>
 		<?php	

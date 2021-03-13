@@ -13,6 +13,10 @@
         margin-bottom: 50px;
     }
 
+    button.single_add_to_cart_button.button.alt:hover, button.single_add_to_cart_button.button.alt:focus {
+        background-color: rgba(44, 51, 57, 0.651);
+}
+
     .price {
         display: none;
     }
@@ -35,11 +39,25 @@
             margin: 10px;
         }
     }
+
+    .entry-summary {
+        display: flex;
+        flex-direction: column;
+
+        .wc-sc-call-for-credit-container {
+            order: -2;
+        }
+
+        .cart {
+            order: -1;
+        }
+    }
 }
 
 @media screen and (min-width: 1024px) {
 .postid-230 {
-    div#call_for_credit {
+
+       div#call_for_credit {
 
         text-align: left;
         .wc-sc-row {

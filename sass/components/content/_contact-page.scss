@@ -4,7 +4,7 @@
     padding: 20px;
     background-color: black;
     color: white;
-    opacity: 0.75;
+    opacity: 0.85;
     font-family: $font__content;
 
     div.wpforms-container-full .wpforms-form button[type="submit"] {
@@ -21,6 +21,9 @@
 
 .contact-info {
     text-align: center;
+    h2, h3 {
+        color: white;
+    }
     p {
         margin-bottom: 10px;
         font-size: 16px;

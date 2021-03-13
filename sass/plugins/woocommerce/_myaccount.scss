@@ -19,7 +19,7 @@
         }
     }
 
-    .entry-content {
+      .entry-content {
         .woocommerce {
             h2 {
                 font-size: 1em;
@@ -51,6 +51,25 @@
             }
         }
     }
+
+    button.woocommerce-button.button.woocommerce-form-login__submit {
+        color: white;
+        background-color: rgb(44, 51, 57);
+        border: white solid 2px;
+        padding: 15px;
+       
+    }
+
+    button.woocommerce-button.button.woocommerce-form-login__submit:hover, 
+    button.woocommerce-button.button.woocommerce-form-login__submit:focus {
+        background-color: rgba(44, 51, 57, 0.651);
+    }
+}
+
+form.woocommerce-form.woocommerce-form-login.login {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 @media screen and (min-width: 1024px) {

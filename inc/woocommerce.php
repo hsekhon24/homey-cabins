@@ -386,3 +386,5 @@ add_action('woocommerce_after_single_product_summary', 'hc_arrive_depart_time');
 $obj_inst = WC_SC_Purchase_Credit::get_instance();
 remove_action( 'woocommerce_single_product_summary', array(  $obj_inst, 'call_for_credit_form' ), 20 );
 add_action( 'woocommerce_single_product_summary', array(  $obj_inst, 'call_for_credit_form' ), 29 );
+
+

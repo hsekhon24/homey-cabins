@@ -27,6 +27,11 @@
 		height: 60px;
 	}
 
+	a.button.product_type_accommodation-booking.add_to_cart_button:hover, 
+	a.button.product_type_accommodation-booking.add_to_cart_button:focus {
+		background-color: rgba(44, 51, 57, 0.651);
+	}
+
 	ul.products {
 		margin: 0;
 		padding: 0;
@@ -54,7 +59,7 @@
 
 	li.product:nth-of-type(even) {
 		color: white;
-		background-color: rgb(140, 167, 140); // lightgreen
+		background-color: #8ca78c; // lightgreen
 		a {
 			color: white;
 			text-decoration: none;
